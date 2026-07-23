@@ -62,9 +62,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. There is no horizontal scroll at 360px, and the hero, feature cards, three-column diff section, and the support section's two-column grid all collapse correctly at the 760px breakpoint. (The prototype's support section is inline-styled and its grid is NOT covered by the existing `@media(max-width:760px)` block — porting it verbatim would overflow on mobile.)
   5. The squiggle animation is suppressed under `prefers-reduced-motion: reduce`; interactive elements have visible focus states reachable by keyboard; the hero image is the LCP element, loads with `priority` and explicit dimensions (no font-swap layout shift), and every `<img>` has descriptive, keyword-natural alt text — never "screenshot"; the app icon and hero screenshot are served from this project's own `public/`, with no `../` references.
 
-**Plans**: 3 plans
+**Plans**: 1/3 plans executed
 
-- [ ] 02-01-PLAN.md — Foundation: install Playwright (live gate), copy hero/icon assets to `public/`, and extend `globals.css` (reduced-motion guard, promoted support/tip classes, support-grid 760px collapse, nav anchor color/hide fixes)
+- [x] 02-01-PLAN.md — Foundation: install Playwright (live gate), copy hero/icon assets to `public/`, and extend `globals.css` (reduced-motion guard, promoted support/tip classes, support-grid 760px collapse, nav anchor color/hide fixes)
 - [ ] 02-02-PLAN.md — Build all 10 sections in `app/page.tsx` (nav→footer) pixel-faithful to concept-1a, applying the 5 defect fixes, wiring `lib/content.ts`, hero via `next/image` priority
 - [ ] 02-03-PLAN.md — Confirm the live Playwright gate is green across all viewports, extend `landing.spec.ts` with per-section presence checks (no weakening), final build/claims/gate verification
 
@@ -109,6 +109,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Verified Copy | 2/2 | Complete    | 2026-07-24 |
-| 2. Page Sections & Responsive UI | 0/3 | Not started | - |
+| 2. Page Sections & Responsive UI | 1/3 | In Progress|  |
 | 3. SEO Metadata, Structured Data & Social Card | 0/TBD | Not started | - |
 | 4. Deployment, Domain & Verification | 0/TBD | Not started | - |
