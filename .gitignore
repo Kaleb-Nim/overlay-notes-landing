@@ -26,3 +26,6 @@ bun-debug.log*
 
 # TypeScript
 *.tsbuildinfo
+
+# Vercel
+.vercel
