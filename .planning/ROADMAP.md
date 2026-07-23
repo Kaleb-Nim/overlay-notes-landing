@@ -39,7 +39,9 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A claim-traceability check confirms every visible-copy claim — including the verbatim privacy statement ("nothing is collected, transmitted, sold, or shared"), the required exact phrase "excalidraw chrome extension", and the support section's claims ("free and always will be", "no accounts, no ads, nothing tracked", solo developer covering hosting costs) — is sourced to a named line in `../overlay-notes/store/STORE-LISTING.md` or `README.md`, with zero matches against the banned-term list (PDF, Firefox, Safari, sync, accounts, export, cross-note search, dashboards, collaboration, sharing) and no keyword stuffing. The support section's "nothing tracked" wording is checked for conflict with the site's own Vercel Analytics.
   4. `lib/content.ts` holds the 6 FAQ question/answer pairs and the verbatim NUS CS2030 origin story, each source-tagged, structured so the same array will later feed both the visible FAQ section and the JSON-LD builder without ever drifting apart.
   5. A single `baseUrl` constant exists in `lib/site-config.ts` that every future absolute-URL consumer (canonical, `og:url`, `og:image`, sitemap, JSON-LD) will derive from — changing the domain is a one-line edit.
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 01-01-PLAN.md — Walking skeleton: manual Next.js 16 scaffold, self-hosted fonts, ported tokens + ruled-paper background (`bun run dev`/`build`), harness preserved
+- [ ] 01-02-PLAN.md — Verified-copy data layer: `baseUrl`, typed `lib/content.ts` (faqs + origin story), claim-traceability artifact + banned-term scan
 
 ### Phase 2: Page Sections & Responsive UI
 **Goal**: A visitor sees the complete marker-on-paper landing page — nav through footer — matching `concept-1a`'s design fidelity, with every interactive element working, no dead links, and the page legible and usable at every viewport and motion preference.
@@ -87,7 +89,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Verified Copy | 0/TBD | Not started | - |
+| 1. Foundation & Verified Copy | 0/2 | Not started | - |
 | 2. Page Sections & Responsive UI | 0/TBD | Not started | - |
 | 3. SEO Metadata, Structured Data & Social Card | 0/TBD | Not started | - |
 | 4. Deployment, Domain & Verification | 0/TBD | Not started | - |
