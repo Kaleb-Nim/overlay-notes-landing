@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 1
 current_phase_name: Foundation & Verified Copy
-status: planning
-stopped_at: Completed 01-01-PLAN.md
-last_updated: "2026-07-23T18:48:22.597Z"
+status: executing
+stopped_at: Completed 01-02-PLAN.md
+last_updated: "2026-07-23T18:54:25.051Z"
 last_activity: 2026-07-24
 last_activity_desc: Plan 01-01 (Foundation Scaffold) executed and committed
 progress:
   total_phases: 1
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-07-24)
 ## Current Position
 
 Phase: 1 of 4 (Foundation & Verified Copy)
-Plan: 1 of 2 in current phase
-Status: In progress
+Plan: 2 of 2 in current phase
+Status: Ready to execute
 Last activity: 2026-07-24 — Plan 01-01 (Foundation Scaffold) executed and committed
 
-Progress: [█████░░░░░] 50%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -59,6 +59,7 @@ Progress: [█████░░░░░] 50%
 | Plan | Duration | Tasks | Files |
 |------|----------|-------|-------|
 | Phase 01 P01 | 10min | 3 tasks | 9 files |
+| Phase 01 P02 | 15min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,10 @@ Recent decisions affecting current work:
 - [Roadmap]: Nav is "Features · FAQ" only — "How it works" section and nav item are out of scope for v1.
 - [Phase ?]: Excluded playwright.config.ts and tests/ from tsconfig.json's type-check scope so bun run build succeeds without installing @playwright/test early or modifying the protected harness files
 - [Phase ?]: Loaded the Shantell Sans + Public Sans weight/style superset (400/500/600/700, normal/italic) via next/font/google, resolving the locked-spec vs actual-usage weight discrepancy at zero runtime cost
+- [Phase ?]: faqs[] kept as plain {question,answer,source}[] — not FAQPage-JSON-LD-shaped — since FAQPage rich results are banned and Phase 3 JSON-LD is SoftwareApplication only
+- [Phase ?]: "excalidraw chrome extension" (CONT-04) tracked in traceability artifact but not stored in lib/content.ts — it lives in Phase 2's diff-column JSX
+- [Phase ?]: Banned-term scan uses whole-word regex + explicit two-phrase whitelist span-overlap check (not whole-word matching alone) to resolve the 'accounts' negation collision
+- [Phase ?]: CONT-08 'nothing tracked' reconciled in writing against this site's own cookieless Vercel Analytics in 01-CLAIM-TRACEABILITY.md — locked copy not reworded
 
 ### Pending Todos
 
@@ -94,6 +99,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-23T18:48:22.593Z
-Stopped at: Completed 01-01-PLAN.md
-Resume file: 01-02-PLAN.md
+Last session: 2026-07-23T18:54:25.047Z
+Stopped at: Completed 01-02-PLAN.md
+Resume file: None

@@ -10,21 +10,21 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Foundation
 
 - [x] **FOUND-01**: Project runs locally via `bun run dev` on Next.js App Router with TypeScript
-- [ ] **FOUND-02**: All absolute URLs (canonical, `og:url`, `og:image`, sitemap, JSON-LD) derive from a single `baseUrl` constant, so changing the domain is a one-line edit
+- [x] **FOUND-02**: All absolute URLs (canonical, `og:url`, `og:image`, sitemap, JSON-LD) derive from a single `baseUrl` constant, so changing the domain is a one-line edit
 - [x] **FOUND-03**: Shantell Sans and Public Sans are self-hosted via `next/font/google` at the weights the design requires, with no render-blocking third-party font request
 - [x] **FOUND-04**: Design tokens from the prototype (paper, purple, ink, head, body, dark-muted, accent-red, yellow, rule) exist as CSS custom properties consumed by every section
 - [x] **FOUND-05**: The ruled-paper background renders as a `repeating-linear-gradient` matching the prototype's 31px/32px rhythm
 
 ### Content
 
-- [ ] **CONT-01**: Every visible claim on the page is traceable to a named line in the extension repo's `store/STORE-LISTING.md` or `README.md`
-- [ ] **CONT-02**: The page contains no reference to PDF annotation, Firefox, Safari, cloud sync, accounts, export, cross-note search, dashboards, collaboration, or sharing
-- [ ] **CONT-03**: The privacy statement reads "nothing is collected, transmitted, sold, or shared" verbatim, matching the certified Developer Dashboard text
-- [ ] **CONT-04**: The exact phrase "excalidraw chrome extension" appears verbatim in visible body copy, in a natural sentence
-- [ ] **CONT-05**: Each SEO target keyword appears at most once, in a natural sentence — no stuffing
-- [ ] **CONT-06**: The 6 FAQ questions and answers live in one typed content module, consumed by the visible FAQ section
-- [ ] **CONT-07**: The NUS CS2030 origin story appears verbatim as specified in the design handoff
-- [ ] **CONT-08**: The support section's claims ("free and always will be", "no accounts, no ads, nothing tracked", solo developer covering hosting costs) are reconciled against `STORE-LISTING.md` and do not contradict CONT-03's certified privacy statement
+- [x] **CONT-01**: Every visible claim on the page is traceable to a named line in the extension repo's `store/STORE-LISTING.md` or `README.md`
+- [x] **CONT-02**: The page contains no reference to PDF annotation, Firefox, Safari, cloud sync, accounts, export, cross-note search, dashboards, collaboration, or sharing
+- [x] **CONT-03**: The privacy statement reads "nothing is collected, transmitted, sold, or shared" verbatim, matching the certified Developer Dashboard text
+- [x] **CONT-04**: The exact phrase "excalidraw chrome extension" appears verbatim in visible body copy, in a natural sentence
+- [x] **CONT-05**: Each SEO target keyword appears at most once, in a natural sentence — no stuffing
+- [x] **CONT-06**: The 6 FAQ questions and answers live in one typed content module, consumed by the visible FAQ section
+- [x] **CONT-07**: The NUS CS2030 origin story appears verbatim as specified in the design handoff
+- [x] **CONT-08**: The support section's claims ("free and always will be", "no accounts, no ads, nothing tracked", solo developer covering hosting costs) are reconciled against `STORE-LISTING.md` and do not contradict CONT-03's certified privacy statement
 
 ### Page
 
@@ -123,18 +123,18 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | FOUND-01 | Phase 1 | Complete |
-| FOUND-02 | Phase 1 | Pending |
+| FOUND-02 | Phase 1 | Complete |
 | FOUND-03 | Phase 1 | Complete |
 | FOUND-04 | Phase 1 | Complete |
 | FOUND-05 | Phase 1 | Complete |
-| CONT-01 | Phase 1 | Pending |
-| CONT-02 | Phase 1 | Pending |
-| CONT-03 | Phase 1 | Pending |
-| CONT-04 | Phase 1 | Pending |
-| CONT-05 | Phase 1 | Pending |
-| CONT-06 | Phase 1 | Pending |
-| CONT-07 | Phase 1 | Pending |
-| CONT-08 | Phase 1 | Pending |
+| CONT-01 | Phase 1 | Complete |
+| CONT-02 | Phase 1 | Complete |
+| CONT-03 | Phase 1 | Complete |
+| CONT-04 | Phase 1 | Complete |
+| CONT-05 | Phase 1 | Complete |
+| CONT-06 | Phase 1 | Complete |
+| CONT-07 | Phase 1 | Complete |
+| CONT-08 | Phase 1 | Complete |
 | PAGE-01 | Phase 2 | Pending |
 | PAGE-02 | Phase 2 | Pending |
 | PAGE-03 | Phase 2 | Pending |
