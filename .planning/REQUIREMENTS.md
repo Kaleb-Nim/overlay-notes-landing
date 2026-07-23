@@ -24,6 +24,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **CONT-05**: Each SEO target keyword appears at most once, in a natural sentence — no stuffing
 - [ ] **CONT-06**: The 6 FAQ questions and answers live in one typed content module, consumed by the visible FAQ section
 - [ ] **CONT-07**: The NUS CS2030 origin story appears verbatim as specified in the design handoff
+- [ ] **CONT-08**: The support section's claims ("free and always will be", "no accounts, no ads, nothing tracked", solo developer covering hosting costs) are reconciled against `STORE-LISTING.md` and do not contradict CONT-03's certified privacy statement
 
 ### Page
 
@@ -38,6 +39,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **PAGE-09**: Visitor sees a footer linking to GitHub, the privacy policy on GitHub Pages, and Excalidraw's MIT attribution
 - [ ] **PAGE-10**: Every in-page nav link scrolls to a section that exists on the page
 - [ ] **PAGE-11**: Primary CTA links to the live Chrome Web Store listing; secondary CTA links to the GitHub repo
+- [ ] **PAGE-12**: Visitor sees a support section ("Keep the marker uncapped") as the last content block before the footer — white card with the purple "☕ support" tab, the solo-developer pitch, a "Buy me a coffee" CTA, and the $3/$8/$20 tip chips
+- [ ] **PAGE-13**: The support CTA links to `https://buymeacoffee.com/kaleb-nim`, and the tip-amount chips are either real links or visually non-interactive — never dead elements that look clickable
 
 ### SEO
 
@@ -61,7 +64,7 @@ Requirements for initial release. Each maps to roadmap phases.
 ### Quality
 
 - [ ] **QUAL-01**: No horizontal scroll at 360px viewport width
-- [ ] **QUAL-02**: Hero, feature cards, and the three-column diff section collapse correctly at the 760px breakpoint
+- [ ] **QUAL-02**: Hero, feature cards, the three-column diff section, and the support section's two-column grid all collapse correctly at the 760px breakpoint
 - [ ] **QUAL-03**: The page is legible under both light and dark browser themes
 - [ ] **QUAL-04**: The squiggle animation is suppressed under `prefers-reduced-motion: reduce`
 - [ ] **QUAL-05**: Interactive elements have visible focus states and are reachable by keyboard
@@ -131,6 +134,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONT-05 | Phase 1 | Pending |
 | CONT-06 | Phase 1 | Pending |
 | CONT-07 | Phase 1 | Pending |
+| CONT-08 | Phase 1 | Pending |
 | PAGE-01 | Phase 2 | Pending |
 | PAGE-02 | Phase 2 | Pending |
 | PAGE-03 | Phase 2 | Pending |
@@ -142,6 +146,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PAGE-09 | Phase 2 | Pending |
 | PAGE-10 | Phase 2 | Pending |
 | PAGE-11 | Phase 2 | Pending |
+| PAGE-12 | Phase 2 | Pending |
+| PAGE-13 | Phase 2 | Pending |
 | QUAL-01 | Phase 2 | Pending |
 | QUAL-02 | Phase 2 | Pending |
 | QUAL-03 | Phase 2 | Pending |
@@ -167,8 +173,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEPL-04 | Phase 4 | Pending |
 
 **Coverage:**
-- v1 requirements: 46 total (recount at roadmap creation found 46 individually listed IDs across categories — FOUND 5, CONT 7, PAGE 11, SEO 9, ASSET 4, QUAL 6, DEPL 4 — correcting the earlier 44 placeholder count below)
-- Mapped to phases: 46/46 ✓
+- v1 requirements: 49 total (FOUND 5, CONT 8, PAGE 13, SEO 9, ASSET 4, QUAL 6, DEPL 4). A recount at roadmap creation found 46 individually listed IDs, correcting an earlier 44 placeholder; the support section added 2026-07-24 brings 3 more (CONT-08, PAGE-12, PAGE-13).
+- Mapped to phases: 49/49 ✓
 - Unmapped: 0
 
 ---

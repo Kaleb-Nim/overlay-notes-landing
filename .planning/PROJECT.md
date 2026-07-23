@@ -36,6 +36,7 @@ that those visitors arrive in the first place.
 - [ ] `SoftwareApplication` JSON-LD passes Google's Rich Results Test
 - [ ] FAQ appears as visible page text (no FAQPage schema — see Key Decisions)
 - [ ] In-page nav links resolve to real anchors; squiggle animation respects `prefers-reduced-motion`
+- [ ] A support/donation section links to Buy Me a Coffee, with claims reconciled like all other copy
 - [ ] 1200×630 OG image created from the annotate screenshot
 - [ ] `robots.txt` and `sitemap.xml` return 200
 - [ ] Deployed to Vercel on `overlay-notes.kalebnim.dev` with Analytics + Speed Insights
@@ -90,11 +91,21 @@ preview-less link. Fixing Open Graph is the highest-leverage single change on th
 `76.76.21.21`. `overlay-notes.kalebnim.dev` does not resolve yet — the subdomain needs a
 CNAME added **at Google Cloud DNS**, not via Vercel nameservers.
 
+**Support section, added to the handoff 2026-07-24.** A "Keep the marker uncapped" card sits
+as the last content block before the footer: white card with a purple "☕ support" tab, the
+solo-developer pitch, a "Buy me a coffee" CTA → `https://buymeacoffee.com/kaleb-nim`, and
+$3/$8/$20 tip chips. The design handoff's `README.md` was NOT updated to document it — the
+prototype HTML is the only spec. Two caveats carried into requirements: its grid is inline-styled
+and escapes the prototype's `@media(max-width:760px)` block, and its tip chips are `<span>`
+elements that look interactive but aren't.
+
 **Known defects in the prototype** (confirmed by reading `concept-1a.html`):
 - Canonical, `og:url`, `og:image`, and both JSON-LD `url`/`image` fields point at the old `kaleb-nim.github.io` domain.
 - A `FAQPage` JSON-LD block ships with no visible FAQ anywhere in the file.
 - In-page nav items are `<span>` elements with no `href` and no matching anchor targets.
 - The load-triggered `stroke-dashoffset` squiggle animation has no `prefers-reduced-motion` guard.
+- The support section's `grid-template-columns:1.3fr 1fr` is inline and uncovered by the 760px media query, so it will not collapse on mobile.
+- The support section's `$3`/`$8`/`$20` tip chips are `<span>` elements styled as buttons with no link behavior.
 
 ## Constraints
 
@@ -138,4 +149,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-07-24 after initialization*
+*Last updated: 2026-07-24 after adding the support section*
