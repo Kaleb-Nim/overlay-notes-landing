@@ -33,8 +33,9 @@ that those visitors arrive in the first place.
 - [ ] Landing page recreates the approved "marker-on-paper" concept-1a design at high fidelity
 - [ ] Every page claim is traceable to `store/STORE-LISTING.md` in the extension repo
 - [ ] Full SEO `<head>`: title, meta description, canonical, Open Graph, Twitter card — all absolute URLs on the new domain
-- [ ] `SoftwareApplication` and `FAQPage` JSON-LD both pass Google's Rich Results Test
-- [ ] FAQ appears as visible page text, not schema-only
+- [ ] `SoftwareApplication` JSON-LD passes Google's Rich Results Test
+- [ ] FAQ appears as visible page text (no FAQPage schema — see Key Decisions)
+- [ ] In-page nav links resolve to real anchors; squiggle animation respects `prefers-reduced-motion`
 - [ ] 1200×630 OG image created from the annotate screenshot
 - [ ] `robots.txt` and `sitemap.xml` return 200
 - [ ] Deployed to Vercel on `overlay-notes.kalebnim.dev` with Analytics + Speed Insights
@@ -48,6 +49,10 @@ that those visitors arrive in the first place.
 - **`aggregateRating` / `review` structured data** — the extension has no ratings yet; fabricating them violates Google's structured-data policy.
 - **Blog, changelog, docs site** — single page for v1.
 - **Backlink from the old GH Pages page** — not selected for v1; the old page keeps its single job as the privacy policy.
+- **`FAQPage` JSON-LD** — Google removed FAQ rich results entirely on 2026-05-07. The schema earns nothing in search and creates a permanent schema/visible-text sync obligation. The visible FAQ stays; the schema goes.
+- **"How it works" section** — declined for v1. The "toggle → grab pill → draw → autosaves" mechanic is covered adequately by "What you can do". The nav item is dropped accordingly (nav becomes Features · FAQ).
+- **Dedicated Privacy section and `<all_urls>` permission copy** — declined for v1. The footer links out to the policy on GitHub Pages. Flagged as the largest remaining trust gap for a `<all_urls>` extension; revisit if install conversion underperforms.
+- **Dark-mode palette adaptation** — the fixed paper/purple palette renders identically and legibly under both browser themes. A true dark variant would require reinterpreting the "marker on paper" concept, which the design handoff does not cover.
 
 ## Context
 
@@ -79,6 +84,18 @@ verbatim in visible copy.
 **Prior signal.** A LinkedIn post about the project got 151 reactions against a bare,
 preview-less link. Fixing Open Graph is the highest-leverage single change on the page.
 
+**DNS, verified 2026-07-24.** `kalebnim.dev` is already registered in the Vercel account
+`kaleb-nims-projects`, but on third-party nameservers (Google Cloud DNS,
+`ns-cloud-b{1,2,3,4}.googledomains.com`). The apex already resolves to Vercel's anycast IP
+`76.76.21.21`. `overlay-notes.kalebnim.dev` does not resolve yet — the subdomain needs a
+CNAME added **at Google Cloud DNS**, not via Vercel nameservers.
+
+**Known defects in the prototype** (confirmed by reading `concept-1a.html`):
+- Canonical, `og:url`, `og:image`, and both JSON-LD `url`/`image` fields point at the old `kaleb-nim.github.io` domain.
+- A `FAQPage` JSON-LD block ships with no visible FAQ anywhere in the file.
+- In-page nav items are `<span>` elements with no `href` and no matching anchor targets.
+- The load-triggered `stroke-dashoffset` squiggle animation has no `prefers-reduced-motion` guard.
+
 ## Constraints
 
 - **Tech stack**: Next.js App Router + Bun — author preference; no npm. Deployed on Vercel.
@@ -98,8 +115,10 @@ preview-less link. Fixing Open Graph is the highest-leverage single change on th
 | Vercel over GitHub Pages | Custom subdomain, preview deploys, Analytics + Speed Insights, no `/docs` publish-root gotcha | — Pending |
 | Privacy policy stays on GitHub Pages | The Web Store dashboard URL keeps working with zero action; eliminates the brief's only blocking constraint | — Pending |
 | Screenshot hero, no video in v1 | Protects LCP on the page's largest element; video adds 7.8MB and a hosting decision for unproven gain | — Pending |
-| Visible FAQ section + FAQPage schema | Schema-only FAQs violate Google's guidelines; the 6 questions are also the page's strongest long-tail asset | — Pending |
+| Visible FAQ section, **no** FAQPage schema | Google removed FAQ rich results entirely on 2026-05-07 — the schema has no search value and creates a sync liability. The visible Q&As remain valuable as long-tail ranking copy. Supersedes an earlier decision to ship both. | — Pending |
 | `next/font` self-hosted over Google Fonts CDN | Removes a render-blocking third-party request and the associated CLS — Shantell Sans and Public Sans are both on Google Fonts | — Pending |
+| Treat `concept-1a.html` as a design reference, never a source of truth for URLs | Its canonical, `og:url`, `og:image`, and JSON-LD `url`/`image` all still point at `kaleb-nim.github.io`. Copying it literally would ship stale production URLs. | — Pending |
+| Fixed light palette; no `prefers-color-scheme` variant | The paper/purple palette is legible under both browser themes, and the hand-drawn identity depends on the paper background | — Pending |
 
 ## Evolution
 
