@@ -191,3 +191,27 @@ Do not make direct repo edits outside a GSD workflow unless the user explicitly 
 > Profile not yet configured. Run `/gsd-profile-user` to generate your developer profile.
 > This section is managed by `generate-claude-profile` -- do not edit manually.
 <!-- GSD:profile-end -->
+
+<!-- Non-GSD section: hand-authored, keep outside GSD-managed markers so regeneration preserves it. -->
+## Testing — Playwright E2E (read before scaffolding or building sections)
+
+This repo uses **Playwright (CLI, bundled Chromium)** as its E2E gate, wired into the
+GSD run via `workflow.test_command = bash scripts/test-gate.sh` and `workflow.verifier = true`.
+Passing tests are credited by the verifier as behavioral evidence, converting would-be
+human-verify items into machine-`VERIFIED` ones. See `TESTING.md` for the full coverage map.
+
+A test harness already exists in the repo before the app is scaffolded:
+`playwright.config.ts`, `scripts/test-gate.sh`, `tests/landing.spec.ts`, `tests/seo.spec.ts`, `TESTING.md`.
+
+**Rules:**
+- **Preserve the harness when scaffolding Next.js (Phase 1).** Do NOT delete or overwrite the
+  files listed above. If `create-next-app` refuses because the directory is non-empty, scaffold
+  into a temp dir and merge, or add Next deps manually (`bun add next react react-dom`, `bun add -d typescript @types/react @types/node`) — but keep `playwright.config.ts`, `scripts/`, and `tests/`.
+- **Install Playwright during Phase 1 setup:** `bun add -d @playwright/test @types/node` then
+  `bunx playwright install chromium`. Until installed, `scripts/test-gate.sh` self-skips (harmless),
+  but the tests can only start crediting criteria once it's installed.
+- **Browsers:** `bunx playwright` with bundled Chromium only. Never system Chrome, never the Playwright MCP server.
+- **Package scripts:** keep `"dev": "next dev"`, `"build": "next build"`, `"start": "next start"`, and add `"test": "playwright test"` — but the GSD gate calls `scripts/test-gate.sh`, not `bun test`.
+- **Phase 2:** make `tests/landing.spec.ts` pass (give nav-targeted sections real `id`s; satisfy the CTA/alt/responsive/reduced-motion/focus assertions). Extend it with per-section presence checks — never weaken the locked-URL or invariant assertions.
+- **Phase 3:** the self-guarding `tests/seo.spec.ts` tests must actually assert (not silently skip) once metadata, JSON-LD, robots, and sitemap exist.
+- **Test names are behavior descriptions**, not "screenshot"-style placeholders; keep alt-text and copy claims consistent with `../overlay-notes/store/STORE-LISTING.md`.
