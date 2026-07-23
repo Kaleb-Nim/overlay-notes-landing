@@ -109,6 +109,56 @@ test.describe('Images & accessibility', () => {
   });
 });
 
+test.describe('Section presence', () => {
+  test('all ten page sections are on the page (nav, hero, who, features, diff, origin, faq, support, footer)', async ({
+    page,
+  }) => {
+    // Nav lives inside <header>; hero is `.hero` inside it — both implicitly present
+    // whenever the rest of the page renders, so only the ids that own a scroll target
+    // or a distinct section wrapper are asserted individually here.
+    await expect(page.locator('header')).toHaveCount(1);
+    await expect(page.locator('.hero#hero')).toHaveCount(1);
+    for (const id of ['who', 'features', 'how-its-different', 'origin-story', 'faq', 'support']) {
+      await expect(page.locator(`#${id}`), `#${id} section is missing from the page`).toHaveCount(1);
+    }
+    await expect(page.locator('footer')).toHaveCount(1);
+  });
+
+  test('the hero screenshot renders with a descriptive, non-generic alt', async ({ page }) => {
+    const hero = page.locator('.shot img').first();
+    await expect(hero).toBeVisible();
+    const alt = (await hero.getAttribute('alt')) ?? '';
+    expect(alt.length, 'hero screenshot alt is empty').toBeGreaterThan(0);
+    expect(alt, 'hero screenshot alt should describe the CS2030 lecture-notes annotation').toContain(
+      'CS2030 lecture-notes',
+    );
+  });
+
+  test('the FAQ section renders all six question entries', async ({ page }) => {
+    await expect(page.locator('#faq .h')).toHaveCount(6);
+  });
+
+  test('the "Who it\'s for" section renders all four audience chips', async ({ page }) => {
+    await expect(page.locator('#who .chip')).toHaveCount(4);
+  });
+
+  test('the features band renders all four capability cards', async ({ page }) => {
+    await expect(page.locator('#features .card')).toHaveCount(4);
+  });
+
+  test('support tip amounts ($3/$8/$20) are non-interactive, not clickable links', async ({ page }) => {
+    const tipChips = page.locator('#support .tip-chip');
+    await expect(tipChips).toHaveCount(3);
+    // Reuses the existing dead-link invariant: a styled-clickable <a> with no real
+    // destination would be a defect, so the tip amounts must not be anchors at all.
+    const tags = await tipChips.evaluateAll((els) => els.map((el) => el.tagName.toLowerCase()));
+    for (const tag of tags) {
+      expect(tag, 'tip-chip amount must be a plain <span>, not an anchor').toBe('span');
+    }
+    expect(await page.locator('#support a.tip-chip').count(), 'a tip-chip amount is rendered as an anchor').toBe(0);
+  });
+});
+
 test.describe('Motion & focus', () => {
   test('the marker squiggle animation is suppressed under prefers-reduced-motion', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
