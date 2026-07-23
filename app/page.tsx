@@ -125,6 +125,85 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      <section className="who" id="who">
+        <div className="wrap">
+          <div className="kicker">made for margin-scribblers ↴</div>
+          <h2>Who it&apos;s for</h2>
+          <div className="chips">
+            <span className="chip">📚 Students</span>
+            <span className="chip">🔬 Researchers</span>
+            <span className="chip">🧠 Self-learners</span>
+            <span className="chip">💻 Devs reading docs</span>
+          </div>
+          <p>
+            Anyone who marks up what they read — arrows, question marks, &quot;wait, why?&quot;
+            — right on the page.
+          </p>
+        </div>
+      </section>
+
+      <section className="band" id="features">
+        <div className="wrap">
+          <h2>What you can do</h2>
+          <p className="sub">Freehand marker, shapes, arrows and text — right on the live page.</p>
+          <div className="cards">
+            <div className="card">
+              <div className="t">✎ Sketch anywhere</div>
+              <div className="d">Draw over any website — freehand, arrows, shapes, text.</div>
+            </div>
+            <div className="card">
+              <div className="t">↕ Scrolls with it</div>
+              <div className="d">Notes pin to the content, not the screen.</div>
+            </div>
+            <div className="card">
+              <div className="t">💾 Autosaves</div>
+              <div className="d">Saved per URL, locally. Reappears on revisit — no account.</div>
+            </div>
+            <div className="card">
+              <div className="t">🌐 Everywhere</div>
+              <div className="d">Works on strict sites like GitHub. Offline too.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="diff" id="how-its-different">
+        <div className="wrap">
+          <h2>How it&apos;s different</h2>
+          <div className="cols">
+            <div>
+              <div className="h">vs. highlighters</div>
+              <div className="b">
+                They only mark text. Draw arrows, diagrams and handwriting <i>anywhere</i>.
+              </div>
+            </div>
+            <div>
+              <div className="h">vs. Excalidraw</div>
+              <div className="b">
+                The excalidraw chrome extension that draws on the <i>live page</i> — not a blank
+                canvas.
+              </div>
+            </div>
+            <div>
+              <div className="h">vs. screenshots</div>
+              <div className="b">
+                Notes stay attached to the living page and come back on revisit. Keep browsing.
+              </div>
+            </div>
+          </div>
+
+          <div className="origin" id="origin-story">
+            <div className="tag">the story</div>
+            <p>
+              Built while cramming for <b>NUS CS2030 (Programming Methodology II)</b>. I wanted
+              to scribble on lecture notes in the browser the way I do on paper — arrows,
+              question marks, &quot;wait, why?&quot; — so I made a marker that lives on top of
+              the web.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
