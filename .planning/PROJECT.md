@@ -130,6 +130,7 @@ elements that look interactive but aren't.
 | `next/font` self-hosted over Google Fonts CDN | Removes a render-blocking third-party request and the associated CLS — Shantell Sans and Public Sans are both on Google Fonts | — Pending |
 | Treat `concept-1a.html` as a design reference, never a source of truth for URLs | Its canonical, `og:url`, `og:image`, and JSON-LD `url`/`image` all still point at `kaleb-nim.github.io`. Copying it literally would ship stale production URLs. | — Pending |
 | Fixed light palette; no `prefers-color-scheme` variant | The paper/purple palette is legible under both browser themes, and the hand-drawn identity depends on the paper background | — Pending |
+| Defer the Playwright install to Phase 2 (not Phase 1, despite CLAUDE.md's literal wording) | `scripts/test-gate.sh` goes live the instant `@playwright/test` is installed (its other two conditions — config + specs — already hold), and `tests/landing.spec.ts` hard-asserts Phase-2 surfaces (CTAs, images) with no self-guard; installing in Phase 1 would fail Phase 1's own execute gate. Leaving it uninstalled keeps the gate inert, matching `test-gate.sh`'s header and `TESTING.md` ("active from Phase 2 on"). | ✓ Phase 1 — foundation ships with the gate correctly inert; Phase 2 installs Playwright first |
 
 ## Evolution
 
@@ -149,4 +150,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-07-24 after adding the support section*
+*Last updated: 2026-07-24 after Phase 1 (Foundation & Verified Copy)*
