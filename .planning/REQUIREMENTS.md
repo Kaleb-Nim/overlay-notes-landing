@@ -110,6 +110,8 @@ Explicitly excluded. Documented to prevent scope creep.
 | Blog, changelog, or docs site | Single page for v1. |
 | Cookie banner, newsletter modal, chat widget | Vercel Analytics is cookieless. The rest are anti-features that depress conversion. |
 | Backlink from the old GitHub Pages page | Not selected for v1; the old page keeps its single job as the privacy policy. |
+| "How it works" section | Covered adequately by "What you can do"; nav item dropped accordingly (nav becomes Features · FAQ). |
+| Dedicated Privacy section / `<all_urls>` permission copy | Footer links out to the GitHub Pages policy instead; flagged as the largest remaining trust gap, revisit if install conversion underperforms. |
 
 ## Traceability
 
@@ -117,13 +119,58 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated by roadmapper) | — | Pending |
+| FOUND-01 | Phase 1 | Pending |
+| FOUND-02 | Phase 1 | Pending |
+| FOUND-03 | Phase 1 | Pending |
+| FOUND-04 | Phase 1 | Pending |
+| FOUND-05 | Phase 1 | Pending |
+| CONT-01 | Phase 1 | Pending |
+| CONT-02 | Phase 1 | Pending |
+| CONT-03 | Phase 1 | Pending |
+| CONT-04 | Phase 1 | Pending |
+| CONT-05 | Phase 1 | Pending |
+| CONT-06 | Phase 1 | Pending |
+| CONT-07 | Phase 1 | Pending |
+| PAGE-01 | Phase 2 | Pending |
+| PAGE-02 | Phase 2 | Pending |
+| PAGE-03 | Phase 2 | Pending |
+| PAGE-04 | Phase 2 | Pending |
+| PAGE-05 | Phase 2 | Pending |
+| PAGE-06 | Phase 2 | Pending |
+| PAGE-07 | Phase 2 | Pending |
+| PAGE-08 | Phase 2 | Pending |
+| PAGE-09 | Phase 2 | Pending |
+| PAGE-10 | Phase 2 | Pending |
+| PAGE-11 | Phase 2 | Pending |
+| QUAL-01 | Phase 2 | Pending |
+| QUAL-02 | Phase 2 | Pending |
+| QUAL-03 | Phase 2 | Pending |
+| QUAL-04 | Phase 2 | Pending |
+| QUAL-05 | Phase 2 | Pending |
+| QUAL-06 | Phase 2 | Pending |
+| ASSET-03 | Phase 2 | Pending |
+| ASSET-04 | Phase 2 | Pending |
+| SEO-01 | Phase 3 | Pending |
+| SEO-02 | Phase 3 | Pending |
+| SEO-03 | Phase 3 | Pending |
+| SEO-04 | Phase 3 | Pending |
+| SEO-05 | Phase 3 | Pending |
+| SEO-06 | Phase 3 | Pending |
+| SEO-07 | Phase 3 | Pending |
+| SEO-08 | Phase 3 | Pending |
+| SEO-09 | Phase 3 | Pending |
+| ASSET-01 | Phase 3 | Pending |
+| ASSET-02 | Phase 3 | Pending |
+| DEPL-01 | Phase 4 | Pending |
+| DEPL-02 | Phase 4 | Pending |
+| DEPL-03 | Phase 4 | Pending |
+| DEPL-04 | Phase 4 | Pending |
 
 **Coverage:**
-- v1 requirements: 44 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 44 ⚠️
+- v1 requirements: 46 total (recount at roadmap creation found 46 individually listed IDs across categories — FOUND 5, CONT 7, PAGE 11, SEO 9, ASSET 4, QUAL 6, DEPL 4 — correcting the earlier 44 placeholder count below)
+- Mapped to phases: 46/46 ✓
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-07-24*
-*Last updated: 2026-07-24 after initial definition*
+*Last updated: 2026-07-24 after roadmap creation — traceability populated, coverage corrected from 44 to 46 (actual enumerated count)*
