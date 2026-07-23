@@ -19,6 +19,8 @@ body{margin:0;color:var(--body);-webkit-font-smoothing:antialiased;
     linear-gradient(var(--paper),var(--paper));}
 a{color:var(--purple);text-decoration:none}
 a:hover{color:var(--purple-dark)}
+a:focus-visible,
+button:focus-visible{outline:2px solid var(--purple);outline-offset:3px;border-radius:4px}
 h1,h2{margin:0}
 img{max-width:100%;display:block}
 .wrap{max-width:1120px;margin:0 auto;padding:0 40px}
