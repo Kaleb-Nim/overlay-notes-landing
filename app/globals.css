@@ -1,0 +1,103 @@
+/* app/globals.css — ported verbatim from .planning/design-handoff/concept-1a.html
+   Only edit made during porting: the two prototype font-family string literals
+   were replaced with var(--font-shantell)/var(--font-public), per RESEARCH
+   Pattern 3. Every token, gradient stop, rotation, and shadow value is copied
+   literally — do not re-derive. Selectors below target markup Phase 2 will add. */
+
+:root{
+  --paper:#f6f1e7; --rule:rgba(91,61,245,.10); --margin-red:rgba(214,72,72,.35);
+  --purple:#5b3df5; --purple-dark:#3f27c9; --ink:#211d2e; --head:#1c1830;
+  --body:#4a4560; --dark:#211d2e; --dark-muted:#a9a4c4; --accent-red:#d64848;
+  --yellow:#ffc93c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--body);-webkit-font-smoothing:antialiased;
+  font-family: var(--font-public), system-ui, sans-serif;
+  background:
+    repeating-linear-gradient(var(--paper) 0 31px, var(--rule) 31px 32px),
+    linear-gradient(var(--paper),var(--paper));}
+a{color:var(--purple);text-decoration:none}
+a:hover{color:var(--purple-dark)}
+h1,h2{margin:0}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 40px}
+.marker{font-family: var(--font-shantell), cursive}
+
+/* nav */
+header{position:relative}
+nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0 8px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand span{font:700 20px/1 var(--font-shantell), cursive;color:var(--ink)}
+.navlinks{display:flex;align-items:center;gap:22px;font:500 14px var(--font-public), sans-serif;color:var(--body)}
+.btn-ghost{border:2px solid var(--ink);color:var(--ink);padding:7px 14px;border-radius:20px;font-weight:600}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;padding:30px 0 44px}
+.pill{display:inline-flex;align-items:center;gap:7px;font:600 12.5px var(--font-public), sans-serif;
+  color:var(--purple);background:#fff;border:2px solid var(--purple);padding:6px 12px;border-radius:20px;transform:rotate(-1.5deg)}
+.hero h1{margin:16px 0 6px;font:700 clamp(38px,5vw,54px)/.98 var(--font-shantell), cursive;color:var(--head);letter-spacing:-.5px}
+.hero h1 span{color:var(--purple)}
+.sq path{stroke-dasharray:900;stroke-dashoffset:900;animation:scribble 1.1s ease-out .3s forwards}
+@keyframes scribble{to{stroke-dashoffset:0}}
+.hero p{margin:0 0 22px;max-width:400px;font:400 16px/1.55 var(--font-public), sans-serif}
+.cta-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;
+  font:700 16px var(--font-public), sans-serif;padding:14px 22px;border-radius:26px;box-shadow:3px 4px 0 var(--ink);transform:rotate(-1deg)}
+.btn-primary:hover{color:#fff;transform:rotate(-1deg) translateY(-1px)}
+.btn-dashed{display:inline-flex;align-items:center;font:600 15px var(--font-public), sans-serif;
+  color:var(--ink);border:2px dashed var(--ink);padding:12px 18px;border-radius:26px}
+.btn-dashed:hover{color:var(--ink)}
+.shot{position:relative;padding:12px 8px}
+.shot .frame{transform:rotate(2deg);background:#fff;padding:8px;border-radius:6px;box-shadow:0 16px 30px -12px rgba(20,12,60,.45)}
+.shot .frame img{border-radius:3px}
+.tape{position:absolute;top:0;left:38%;width:64px;height:22px;background:rgba(255,201,60,.55);transform:rotate(-6deg)}
+.note-r{position:absolute;right:-6px;top:44%;font:500 15px var(--font-shantell), cursive;color:var(--accent-red);transform:rotate(5deg)}
+.arrow{position:absolute;left:-14px;bottom:6px;width:80px}
+.note-b{position:absolute;left:-2px;bottom:-6px;font:500 14px var(--font-shantell), cursive;color:var(--ink);transform:rotate(-3deg)}
+
+/* who */
+.who{padding:22px 0 40px}
+.who .kicker{font:500 14px var(--font-shantell), cursive;color:var(--accent-red);transform:rotate(-1deg);margin-bottom:4px}
+.who h2{margin:0 0 14px;font:700 24px var(--font-shantell), cursive;color:var(--head)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:600 14px var(--font-public), sans-serif;color:var(--ink);background:#fff;border:2px solid var(--ink);padding:8px 14px;border-radius:22px}
+.chip:nth-child(odd){transform:rotate(-1deg)} .chip:nth-child(even){transform:rotate(1deg)}
+.who p{margin:14px 0 0;font:400 15px/1.5 var(--font-public), sans-serif;max-width:560px}
+
+/* what you can do (dark band) */
+.band{background:var(--dark)}
+.band .wrap{padding-top:38px;padding-bottom:38px}
+.band h2{font:700 26px var(--font-shantell), cursive;color:#fff;margin-bottom:4px}
+.band .sub{font:400 14px var(--font-public), sans-serif;color:var(--dark-muted);margin:0 0 22px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--paper);border-radius:10px;padding:16px}
+.card:nth-child(odd){transform:rotate(-1deg)} .card:nth-child(even){transform:rotate(1deg)}
+.card .t{font:700 15px var(--font-shantell), cursive;color:var(--purple);margin-bottom:6px}
+.card .d{font:400 13px/1.45 var(--font-public), sans-serif;color:var(--body)}
+
+/* different */
+.diff{padding:34px 0 10px}
+.diff h2{margin:0 0 16px;font:700 24px var(--font-shantell), cursive;color:var(--head)}
+.diff .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.diff .h{font:700 14px var(--font-public), sans-serif;color:var(--ink);margin-bottom:5px}
+.diff .b{font:400 13.5px/1.5 var(--font-public), sans-serif}
+
+/* origin */
+.origin{margin:26px 0 34px;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:22px 24px;position:relative}
+.origin .tag{position:absolute;top:-13px;left:22px;background:var(--yellow);font:600 12px var(--font-public), sans-serif;color:var(--ink);padding:3px 10px;border-radius:12px;transform:rotate(-2deg)}
+.origin p{margin:0;font:500 17px/1.55 var(--font-shantell), cursive;color:var(--ink)}
+
+/* footer */
+footer{background:var(--dark)}
+footer .wrap{padding:20px 40px;display:flex;justify-content:space-between;align-items:center;font:500 13px var(--font-public), sans-serif;color:var(--dark-muted)}
+footer a{color:#cfc9ec} .flinks{display:flex;gap:20px}
+
+@media(max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .diff .cols{grid-template-columns:1fr}
+  .navlinks span{display:none}
+  .footer-year{display:none}
+}
