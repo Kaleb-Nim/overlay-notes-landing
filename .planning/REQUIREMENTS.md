@@ -9,11 +9,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Foundation
 
-- [ ] **FOUND-01**: Project runs locally via `bun run dev` on Next.js App Router with TypeScript
+- [x] **FOUND-01**: Project runs locally via `bun run dev` on Next.js App Router with TypeScript
 - [ ] **FOUND-02**: All absolute URLs (canonical, `og:url`, `og:image`, sitemap, JSON-LD) derive from a single `baseUrl` constant, so changing the domain is a one-line edit
-- [ ] **FOUND-03**: Shantell Sans and Public Sans are self-hosted via `next/font/google` at the weights the design requires, with no render-blocking third-party font request
-- [ ] **FOUND-04**: Design tokens from the prototype (paper, purple, ink, head, body, dark-muted, accent-red, yellow, rule) exist as CSS custom properties consumed by every section
-- [ ] **FOUND-05**: The ruled-paper background renders as a `repeating-linear-gradient` matching the prototype's 31px/32px rhythm
+- [x] **FOUND-03**: Shantell Sans and Public Sans are self-hosted via `next/font/google` at the weights the design requires, with no render-blocking third-party font request
+- [x] **FOUND-04**: Design tokens from the prototype (paper, purple, ink, head, body, dark-muted, accent-red, yellow, rule) exist as CSS custom properties consumed by every section
+- [x] **FOUND-05**: The ruled-paper background renders as a `repeating-linear-gradient` matching the prototype's 31px/32px rhythm
 
 ### Content
 
@@ -122,11 +122,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
+| FOUND-01 | Phase 1 | Complete |
 | FOUND-02 | Phase 1 | Pending |
-| FOUND-03 | Phase 1 | Pending |
-| FOUND-04 | Phase 1 | Pending |
-| FOUND-05 | Phase 1 | Pending |
+| FOUND-03 | Phase 1 | Complete |
+| FOUND-04 | Phase 1 | Complete |
+| FOUND-05 | Phase 1 | Complete |
 | CONT-01 | Phase 1 | Pending |
 | CONT-02 | Phase 1 | Pending |
 | CONT-03 | Phase 1 | Pending |
@@ -173,6 +173,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEPL-04 | Phase 4 | Pending |
 
 **Coverage:**
+
 - v1 requirements: 49 total (FOUND 5, CONT 8, PAGE 13, SEO 9, ASSET 4, QUAL 6, DEPL 4). A recount at roadmap creation found 46 individually listed IDs, correcting an earlier 44 placeholder; the support section added 2026-07-24 brings 3 more (CONT-08, PAGE-12, PAGE-13).
 - Mapped to phases: 49/49 ✓
 - Unmapped: 0

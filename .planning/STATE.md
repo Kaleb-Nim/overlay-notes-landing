@@ -1,12 +1,19 @@
 ---
-gsd_state_version: '1.0'
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+current_phase: 1
+current_phase_name: Foundation & Verified Copy
 status: planning
+stopped_at: Completed 01-01-PLAN.md
+last_updated: "2026-07-23T18:48:22.597Z"
+last_activity: 2026-07-24
+last_activity_desc: Plan 01-01 (Foundation Scaffold) executed and committed
 progress:
-  total_phases: 4
+  total_phases: 1
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_plans: 2
+  completed_plans: 1
 ---
 
 # Project State
@@ -21,15 +28,16 @@ See: .planning/PROJECT.md (updated 2026-07-24)
 ## Current Position
 
 Phase: 1 of 4 (Foundation & Verified Copy)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-07-24 — ROADMAP.md and STATE.md created from requirements + research
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-07-24 — Plan 01-01 (Foundation Scaffold) executed and committed
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
+
 - Total plans completed: 0
 - Average duration: - min
 - Total execution time: 0 hours
@@ -41,10 +49,16 @@ Progress: [░░░░░░░░░░] 0%
 | - | - | - | - |
 
 **Recent Trend:**
+
 - Last 5 plans: -
 - Trend: -
 
 *Updated after each plan completion*
+**Per-Plan Metrics:**
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 01 P01 | 10min | 3 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -58,6 +72,8 @@ Recent decisions affecting current work:
 - [Roadmap]: Custom domain attachment is the last step of Phase 4 — attaching it earlier strips Vercel's default noindex protection on that deployment.
 - [Roadmap]: FAQ is visible-text-only, no `FAQPage` JSON-LD — Google removed FAQ rich results 2026-05-07.
 - [Roadmap]: Nav is "Features · FAQ" only — "How it works" section and nav item are out of scope for v1.
+- [Phase ?]: Excluded playwright.config.ts and tests/ from tsconfig.json's type-check scope so bun run build succeeds without installing @playwright/test early or modifying the protected harness files
+- [Phase ?]: Loaded the Shantell Sans + Public Sans weight/style superset (400/500/600/700, normal/italic) via next/font/google, resolving the locked-spec vs actual-usage weight discrepancy at zero runtime cost
 
 ### Pending Todos
 
@@ -78,6 +94,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-24
-Stopped at: ROADMAP.md and STATE.md written; REQUIREMENTS.md traceability updated; awaiting roadmap approval
-Resume file: None
+Last session: 2026-07-23T18:48:22.593Z
+Stopped at: Completed 01-01-PLAN.md
+Resume file: 01-02-PLAN.md
