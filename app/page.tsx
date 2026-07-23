@@ -17,10 +17,14 @@
 // next/image.
 
 import Image from 'next/image';
+import { faqs } from '@/lib/content';
 
 const WEBSTORE_URL =
   'https://chromewebstore.google.com/detail/overlay-notes/ogekdbffoapphpabjphfgeppildcleck';
 const REPO_URL = 'https://github.com/kaleb-nim/overlay-notes';
+const SUPPORT_URL = 'https://buymeacoffee.com/kaleb-nim';
+const PRIVACY_URL = 'https://kaleb-nim.github.io/overlay-notes/';
+const EXCALIDRAW_URL = 'https://excalidraw.com';
 
 export default function Home() {
   return (
@@ -204,6 +208,63 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="diff" id="faq">
+        <div className="wrap">
+          <h2>FAQ</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+            {faqs.map((faq) => (
+              <div key={faq.question}>
+                <div className="h">{faq.question}</div>
+                <div className="b">{faq.answer}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="support" id="support">
+        <div className="wrap">
+          <div className="support-card">
+            <div className="support-tag">☕ support</div>
+            <div className="support-grid">
+              <div>
+                <h2>Keep the marker uncapped</h2>
+                <p>
+                  Overlay Notes is <b>free and always will be</b> — no accounts, no ads, nothing
+                  tracked. I&apos;m a solo developer covering the hosting and build costs myself.
+                  If it&apos;s saved you some scribbling, a small tip keeps it alive and growing.
+                </p>
+                <div className="support-cta-row">
+                  <a className="btn-coffee" href={SUPPORT_URL}>
+                    ☕ Buy me a coffee
+                  </a>
+                </div>
+              </div>
+              <div className="support-tips">
+                <div className="support-tip-kicker">every tip = one more late-night feature ↴</div>
+                <div className="support-tip-chips">
+                  <span className="tip-chip">$3</span>
+                  <span className="tip-chip tip-chip--alt">$8</span>
+                  <span className="tip-chip tip-chip--featured">$20</span>
+                  <span className="tip-note">or whatever!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="footer">
+        <div className="wrap">
+          <span className="footer-year">© Overlay Notes</span>
+          <span className="flinks">
+            <a href={REPO_URL}>GitHub</a>
+            <a href={PRIVACY_URL}>Privacy</a>
+            <a href={EXCALIDRAW_URL}>Excalidraw (MIT)</a>
+          </span>
+        </div>
+      </footer>
     </>
   );
 }

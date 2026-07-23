@@ -45,6 +45,15 @@ test.describe('Call-to-action links', () => {
   });
 });
 
+// Minimal stand-in for the DOM's `CSS.escape` — that API only exists in a browser
+// context; this runs in the Playwright test's Node.js process (outside
+// `page.evaluate`), where the global `CSS` object is undefined. Escapes any
+// character that isn't a plain ASCII letter/digit/hyphen/underscore, which is
+// sufficient for the lowercase-hyphenated ids this project uses.
+function escapeCssIdent(id: string): string {
+  return id.replace(/([^\w-])/g, '\\$1');
+}
+
 test.describe('In-page navigation', () => {
   test('every in-page nav anchor resolves to an element that exists', async ({ page }) => {
     const hashes = await page.$$eval('a[href^="#"]', (as) =>
@@ -53,7 +62,7 @@ test.describe('In-page navigation', () => {
     for (const hash of hashes) {
       const id = hash.slice(1);
       await expect(
-        page.locator(`#${CSS.escape(id)}, [name="${id}"]`),
+        page.locator(`#${escapeCssIdent(id)}, [name="${id}"]`),
         `nav anchor ${hash} has no target on the page`,
       ).toHaveCount(1);
     }

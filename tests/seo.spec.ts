@@ -10,9 +10,8 @@ import { test, expect, request } from '@playwright/test';
  * them. The Phase 3 executor should confirm none of these silently skip.
  */
 test.describe('SEO head & structured data', () => {
-  test.skip(({}, testInfo) => testInfo.project.name !== 'desktop', 'check once, on desktop');
-
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'check once, on desktop');
     await page.goto('/');
   });
 
@@ -23,8 +22,12 @@ test.describe('SEO head & structured data', () => {
   });
 
   test('meta description is <= 160 characters', async ({ page }) => {
-    const desc = await page.locator('meta[name="description"]').getAttribute('content');
-    test.skip(!desc, 'no meta description yet (Phase 3)');
+    const descLocator = page.locator('meta[name="description"]');
+    // `.getAttribute()` on a locator auto-waits for the element to attach and would
+    // hang to the test timeout if the tag doesn't exist yet (Phase 3) — check count()
+    // first (resolves immediately, even at zero) so the self-guard actually fires.
+    test.skip((await descLocator.count()) === 0, 'no meta description yet (Phase 3)');
+    const desc = await descLocator.getAttribute('content');
     expect(desc!.length, `description too long: "${desc}"`).toBeLessThanOrEqual(160);
   });
 
@@ -33,8 +36,9 @@ test.describe('SEO head & structured data', () => {
   });
 
   test('canonical + og:image resolve to absolute overlay-notes.kalebnim.dev URLs', async ({ page }) => {
-    const canonical = await page.locator('link[rel="canonical"]').getAttribute('href');
-    test.skip(!canonical, 'no canonical tag yet (Phase 3)');
+    const canonicalLocator = page.locator('link[rel="canonical"]');
+    test.skip((await canonicalLocator.count()) === 0, 'no canonical tag yet (Phase 3)');
+    const canonical = await canonicalLocator.getAttribute('href');
     expect(canonical!, 'canonical is not an absolute new-domain URL').toMatch(
       /^https:\/\/overlay-notes\.kalebnim\.dev/,
     );
@@ -69,9 +73,8 @@ test.describe('SEO head & structured data', () => {
 });
 
 test.describe('Crawl surfaces', () => {
-  test.skip(({}, testInfo) => testInfo.project.name !== 'desktop', 'check once, on desktop');
-
-  test('robots.txt returns 200, allows crawling, and points at the sitemap', async ({ baseURL }) => {
+  test('robots.txt returns 200, allows crawling, and points at the sitemap', async ({ baseURL }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'check once, on desktop');
     const ctx = await request.newContext();
     const res = await ctx.get(`${baseURL}/robots.txt`);
     test.skip(res.status() === 404, 'robots.txt not built yet (Phase 3)');
@@ -81,7 +84,8 @@ test.describe('Crawl surfaces', () => {
     await ctx.dispose();
   });
 
-  test('sitemap.xml returns 200', async ({ baseURL }) => {
+  test('sitemap.xml returns 200', async ({ baseURL }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'check once, on desktop');
     const ctx = await request.newContext();
     const res = await ctx.get(`${baseURL}/sitemap.xml`);
     test.skip(res.status() === 404, 'sitemap.xml not built yet (Phase 3)');
