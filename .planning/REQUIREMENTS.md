@@ -56,8 +56,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Assets
 
-- [ ] **ASSET-01**: A 1200×630 OG image exists, compositing the annotate screenshot with the product name and value proposition
-- [ ] **ASSET-02**: The OG image renders correctly in LinkedIn's Post Inspector
+- [x] **ASSET-01**: A 1200×630 OG image exists, compositing the annotate screenshot with the product name and value proposition
+- [x] **ASSET-02**: The OG image renders correctly in LinkedIn's Post Inspector
 - [x] **ASSET-03**: Every `<img>` has descriptive, keyword-natural alt text — never `"screenshot"`
 - [x] **ASSET-04**: The 128×128 app icon and 1280×800 hero screenshot are served from the project's own `public/`, with no `../` references
 
@@ -165,8 +165,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEO-07 | Phase 3 | Complete |
 | SEO-08 | Phase 3 | Complete |
 | SEO-09 | Phase 3 | Complete |
-| ASSET-01 | Phase 3 | Pending |
-| ASSET-02 | Phase 3 | Pending |
+| ASSET-01 | Phase 3 | Complete |
+| ASSET-02 | Phase 3 | Complete |
 | DEPL-01 | Phase 4 | Pending |
 | DEPL-02 | Phase 4 | Pending |
 | DEPL-03 | Phase 4 | Pending |

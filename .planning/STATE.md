@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 3
 current_phase_name: SEO Metadata, Structured Data & Social Card
 status: executing
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-07-24T04:40:29.209Z"
+stopped_at: Completed 03-02-PLAN.md
+last_updated: "2026-07-24T04:45:12.646Z"
 last_activity: 2026-07-24
 last_activity_desc: Phase 3 execution started
 progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 7
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-07-24)
 ## Current Position
 
 Phase: 3 (SEO Metadata, Structured Data & Social Card) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-07-24 — Phase 3 execution started
 
-Progress: [████████░░] 75%
+Progress: [█████████░] 88%
 
 ## Performance Metrics
 
@@ -64,6 +64,7 @@ Progress: [████████░░] 75%
 | Phase 02-page-sections-responsive-ui P02 | 34min | 3 tasks | 3 files |
 | Phase 02 P03 | 15min | 3 tasks | 1 files |
 | Phase 03 P01 | 15min | 3 tasks | 4 files |
+| Phase 03 P02 | 12min | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -88,6 +89,8 @@ Recent decisions affecting current work:
 - [Phase ?]: Fixed pre-existing test-authoring bugs in tests/landing.spec.ts (Node-context CSS.escape) and tests/seo.spec.ts (describe-level test.skip signature, getAttribute() hang) blocking scripts/test-gate.sh from ever exiting 0
 - [Phase ?]: Phase 2 gate confirmed live+green (54/54 landing.spec.ts assertions, 3 viewports); tests/landing.spec.ts extended with per-section presence coverage without weakening any locked assertion
 - [Phase ?]: Trimmed locked meta description from 162 to 158 chars (removed redundant 'the') to satisfy SEO-02's <=160 requirement, preserving all claims verbatim
+- [Phase ?]: Kept UI-SPEC's default OG crop rect (x:400,y:170,w:780,h:630) unchanged — annotation cluster confirmed legible on visual QA, no tuning needed
+- [Phase ?]: Crop-to-box scaling expressed as a runtime cover-scale formula from named CROP_*/PHOTO_BOX_* consts rather than hardcoded pixel values, for easy future re-tuning
 
 ### Pending Todos
 
@@ -108,6 +111,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-24T04:40:29.205Z
-Stopped at: Completed 03-01-PLAN.md
+Last session: 2026-07-24T04:45:12.642Z
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
