@@ -23,7 +23,7 @@ const publicSans = Public_Sans({
 
 const TITLE = 'Draw & Annotate Notes on Any Webpage — Overlay Notes';
 const DESCRIPTION =
-  'Overlay Notes is a free Chrome extension that lets you draw, annotate, and handwrite notes on any webpage. Notes pin to the content and save per page, 100% local.';
+  'Overlay Notes is a free Chrome extension that lets you draw, annotate, and handwrite notes on any webpage. Notes pin to content and save per page, 100% local.';
 const OG_DESCRIPTION =
   "A free Chrome extension that puts an Excalidraw-style sketch canvas on any website. Handwrite notes over what you're reading — they scroll with the page and save locally.";
 const OG_IMAGE_ALT =
