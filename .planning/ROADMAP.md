@@ -85,9 +85,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. A 1200×630 static `public/og-image.png` compositing the annotate screenshot with the product name and value proposition exists and renders correctly when the URL is submitted to LinkedIn's Post Inspector.
 
 **Plans**: 3 plans
+**Wave 1**
 
 - [ ] 03-01-PLAN.md — Crawler-facing SEO surfaces: `app/layout.tsx` metadata + SoftwareApplication JSON-LD, `app/robots.ts`, `app/sitemap.ts`, env-gated preview-noindex `next.config.ts` header (SEO-01..09)
 - [ ] 03-02-PLAN.md — OG social card: committed fonts + `scripts/generate-og-image.ts` (Playwright bundled-Chromium screenshot) → `public/og-image.png` at 1200×630, `generate:og` script (ASSET-01/02 structural)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 03-03-PLAN.md — SEO test suite goes live: extend `tests/seo.spec.ts` to assert (no silent skips) + 4 new checks, full green gate, landing.spec.ts unweakened
 
 ### Phase 4: Deployment, Domain & Verification
