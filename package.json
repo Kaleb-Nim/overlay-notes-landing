@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "playwright test",
-    "verify:claims": "bun scripts/verify-claims.ts"
+    "verify:claims": "bun scripts/verify-claims.ts",
+    "generate:og": "bun scripts/generate-og-image.ts"
   },
   "dependencies": {
     "@vercel/analytics": "2.0.1",
