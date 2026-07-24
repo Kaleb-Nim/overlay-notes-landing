@@ -23,7 +23,7 @@ analytics-reporting site at `overlay-notes.kalebnim.dev`.
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Verified Copy** - Next.js/Bun scaffold, self-hosted fonts, ported design tokens, and every visible claim reconciled against `STORE-LISTING.md`/`README.md` (completed 2026-07-24)
-- [ ] **Phase 2: Page Sections & Responsive UI** - All 10 visible sections built to design-fidelity (incl. the support/donation card), working nav anchors, responsive at 360px/760px, reduced-motion squiggle guard
+- [x] **Phase 2: Page Sections & Responsive UI** - All 10 visible sections built to design-fidelity (incl. the support/donation card), working nav anchors, responsive at 360px/760px, reduced-motion squiggle guard
 - [ ] **Phase 3: SEO Metadata, Structured Data & Social Card** - Correct absolute-URL `<head>`, `SoftwareApplication` JSON-LD, robots/sitemap, and a static OG image verified in LinkedIn's Post Inspector
 - [ ] **Phase 4: Deployment, Domain & Verification** - Public repo, Vercel deploy, custom domain attached last, Analytics + Speed Insights reporting
 
@@ -109,6 +109,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Verified Copy | 2/2 | Complete    | 2026-07-24 |
-| 2. Page Sections & Responsive UI | 3/3 | In Progress|  |
+| 2. Page Sections & Responsive UI | 3/3 | Complete    | 2026-07-24 |
 | 3. SEO Metadata, Structured Data & Social Card | 0/TBD | Not started | - |
 | 4. Deployment, Domain & Verification | 0/TBD | Not started | - |
