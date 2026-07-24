@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 3
-current_phase_name: SEO Metadata, Structured Data & Social Card
-status: verifying
+current_phase: 4
+current_phase_name: Deployment, Domain & Verification
+status: planning
 stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-07-24T04:49:13.458Z"
-last_activity: 2026-07-24
-last_activity_desc: Phase 3 execution started
+last_updated: "2026-07-24T17:38:29.560Z"
+last_activity: 2026-07-25
+last_activity_desc: Phase 3 complete, transitioned to Phase 4
 progress:
   total_phases: 3
   completed_phases: 3
@@ -23,14 +23,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-24)
 
 **Core value:** A visitor who lands here from a search or a shared link immediately understands what Overlay Notes does and clicks through to install it — and the page is discoverable enough that those visitors arrive in the first place.
-**Current focus:** Phase 3 — SEO Metadata, Structured Data & Social Card
+**Current focus:** Phase 4 — Deployment, Domain & Verification
 
 ## Current Position
 
-Phase: 3 (SEO Metadata, Structured Data & Social Card) — EXECUTING
-Plan: 3 of 3
-Status: Phase complete — ready for verification
-Last activity: 2026-07-24 — Phase 3 execution started
+Phase: 4 — Deployment, Domain & Verification
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-07-25 — Phase 3 complete, transitioned to Phase 4
 
 Progress: [██████████] 100%
 
@@ -38,7 +38,7 @@ Progress: [██████████] 100%
 
 **Velocity:**
 
-- Total plans completed: 2
+- Total plans completed: 5
 - Average duration: - min
 - Total execution time: 0 hours
 
@@ -47,6 +47,7 @@ Progress: [██████████] 100%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01 | 2 | - | - |
+| 3 | 3 | - | - |
 
 **Recent Trend:**
 
@@ -101,7 +102,9 @@ None yet.
 ### Blockers/Concerns
 
 - `overlay-notes.kalebnim.dev` does not resolve yet — Phase 4 requires a human to add a CNAME at Google Cloud DNS (not Vercel's nameservers) before the site is reachable on the custom domain.
-- Copy reconciliation (Phase 1) depends on reading `/Users/kalebnim/Documents/GitHub/overlay-notes/store/STORE-LISTING.md` in the sibling repo — confirm it exists and is current before planning Phase 1.
+- ⚠️ [Phase 3 → Phase 4] **SEO-08 production header check**: `next.config.ts` emits `X-Robots-Tag: noindex` only when `VERCEL_ENV !== 'production'`. This relies on Vercel's "Automatically expose System Environment Variables" being **ON** — if OFF, `VERCEL_ENV` is undefined at build and the noindex header would leak onto production. Phase 4 must `curl -I` the live production URL and confirm there is **no** `X-Robots-Tag: noindex` header (Phase 4 Success Criterion #3: "no leftover noindex header").
+- ⚠️ [Phase 3 → Phase 4] **ASSET-02 (LinkedIn Post Inspector)**: confirm the OG card renders in a real share preview — verifiable only against the deployed URL. Structurally satisfied in Phase 3 (`public/og-image.png` is exactly 1200×630; `og:image` is absolute). Confirm live in Phase 4.
+- [Phase 3, optional / non-blocking] **SEO-05 Google Rich Results Test**: recommended external confirmation of the `SoftwareApplication` JSON-LD (structural correctness already machine-verified in `03-VERIFICATION.md`). Run against the live URL anytime in/after Phase 4.
 
 ## Deferred Items
 
