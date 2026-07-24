@@ -206,9 +206,16 @@ const html = `<!doctype html>
 // ---------------------------------------------------------------------------
 
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
-await page.setContent(html, { waitUntil: 'load' });
-await page.screenshot({ path: join(ROOT, 'public/og-image.png') });
-await browser.close();
+try {
+  const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
+  await page.setContent(html, { waitUntil: 'load' });
+  // Wait for the embedded (base64) webfonts to finish parsing before capturing, so the
+  // screenshot is deterministic and never falls back to a system font mid-render.
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({ path: join(ROOT, 'public/og-image.png') });
+} finally {
+  // Always release Chromium, even if setContent/screenshot throws — no leaked browser.
+  await browser.close();
+}
 
 console.log('PASS: scripts/generate-og-image.ts wrote public/og-image.png (1200x630)');
