@@ -84,7 +84,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. `robots.txt` and `sitemap.xml` both return 200, `robots.txt` allows crawling and points at the sitemap, and preview deployments are excluded from search indexing.
   5. A 1200×630 static `public/og-image.png` compositing the annotate screenshot with the product name and value proposition exists and renders correctly when the URL is submitted to LinkedIn's Post Inspector.
 
-**Plans**: 2/3 plans executed
+**Plans**: 3/3 plans executed
 **Wave 1**
 
 - [x] 03-01-PLAN.md — Crawler-facing SEO surfaces: `app/layout.tsx` metadata + SoftwareApplication JSON-LD, `app/robots.ts`, `app/sitemap.ts`, env-gated preview-noindex `next.config.ts` header (SEO-01..09)
@@ -92,7 +92,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 03-03-PLAN.md — SEO test suite goes live: extend `tests/seo.spec.ts` to assert (no silent skips) + 4 new checks, full green gate, landing.spec.ts unweakened
+- [x] 03-03-PLAN.md — SEO test suite goes live: extend `tests/seo.spec.ts` to assert (no silent skips) + 4 new checks, full green gate, landing.spec.ts unweakened
 
 ### Phase 4: Deployment, Domain & Verification
 
@@ -118,5 +118,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation & Verified Copy | 2/2 | Complete    | 2026-07-24 |
 | 2. Page Sections & Responsive UI | 3/3 | Complete    | 2026-07-24 |
-| 3. SEO Metadata, Structured Data & Social Card | 2/3 | In Progress|  |
+| 3. SEO Metadata, Structured Data & Social Card | 3/3 | In Progress|  |
 | 4. Deployment, Domain & Verification | 0/TBD | Not started | - |

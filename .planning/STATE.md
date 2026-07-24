@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 3
 current_phase_name: SEO Metadata, Structured Data & Social Card
-status: executing
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-07-24T04:45:12.646Z"
+status: verifying
+stopped_at: Completed 03-03-PLAN.md
+last_updated: "2026-07-24T04:49:13.458Z"
 last_activity: 2026-07-24
 last_activity_desc: Phase 3 execution started
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 8
-  completed_plans: 7
+  completed_plans: 8
 ---
 
 # Project State
@@ -29,10 +29,10 @@ See: .planning/PROJECT.md (updated 2026-07-24)
 
 Phase: 3 (SEO Metadata, Structured Data & Social Card) — EXECUTING
 Plan: 3 of 3
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-07-24 — Phase 3 execution started
 
-Progress: [█████████░] 88%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -65,6 +65,7 @@ Progress: [█████████░] 88%
 | Phase 02 P03 | 15min | 3 tasks | 1 files |
 | Phase 03 P01 | 15min | 3 tasks | 4 files |
 | Phase 03 P02 | 12min | 3 tasks | 5 files |
+| Phase 03 P03 | 5min | 2 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -91,6 +92,7 @@ Recent decisions affecting current work:
 - [Phase ?]: Trimmed locked meta description from 162 to 158 chars (removed redundant 'the') to satisfy SEO-02's <=160 requirement, preserving all claims verbatim
 - [Phase ?]: Kept UI-SPEC's default OG crop rect (x:400,y:170,w:780,h:630) unchanged — annotation cluster confirmed legible on visual QA, no tuning needed
 - [Phase ?]: Crop-to-box scaling expressed as a runtime cover-scale formula from named CROP_*/PHOTO_BOX_* consts rather than hardcoded pixel values, for easy future re-tuning
+- [Phase ?]: Parsed PNG IHDR bytes directly in tests/seo.spec.ts (node:fs, no new dependency) to cross-check public/og-image.png's actual on-disk dimensions against the declared og:image:width/height meta tags
 
 ### Pending Todos
 
@@ -111,6 +113,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-24T04:45:12.642Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-07-24T04:49:13.453Z
+Stopped at: Completed 03-03-PLAN.md
 Resume file: None
