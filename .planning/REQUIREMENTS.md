@@ -44,15 +44,15 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### SEO
 
-- [ ] **SEO-01**: `<title>` is keyword-first and ≤60 characters
-- [ ] **SEO-02**: Meta description is ≤160 characters and names the price and platform
-- [ ] **SEO-03**: A self-referencing canonical points at the new domain, never at `kaleb-nim.github.io`
-- [ ] **SEO-04**: Open Graph and Twitter card tags are present, with `og:image` as an absolute URL and explicit width/height
-- [ ] **SEO-05**: `SoftwareApplication` JSON-LD is present and passes Google's Rich Results Test, with no `aggregateRating` or `review`
-- [ ] **SEO-06**: `robots.txt` returns 200, allows crawling, and points at the sitemap
-- [ ] **SEO-07**: `sitemap.xml` returns 200 and lists the page's canonical URL
-- [ ] **SEO-08**: Preview deployments are excluded from search indexing
-- [ ] **SEO-09**: `<html lang="en">` is set
+- [x] **SEO-01**: `<title>` is keyword-first and ≤60 characters
+- [x] **SEO-02**: Meta description is ≤160 characters and names the price and platform
+- [x] **SEO-03**: A self-referencing canonical points at the new domain, never at `kaleb-nim.github.io`
+- [x] **SEO-04**: Open Graph and Twitter card tags are present, with `og:image` as an absolute URL and explicit width/height
+- [x] **SEO-05**: `SoftwareApplication` JSON-LD is present and passes Google's Rich Results Test, with no `aggregateRating` or `review`
+- [x] **SEO-06**: `robots.txt` returns 200, allows crawling, and points at the sitemap
+- [x] **SEO-07**: `sitemap.xml` returns 200 and lists the page's canonical URL
+- [x] **SEO-08**: Preview deployments are excluded from search indexing
+- [x] **SEO-09**: `<html lang="en">` is set
 
 ### Assets
 
@@ -156,15 +156,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | QUAL-06 | Phase 2 | Complete |
 | ASSET-03 | Phase 2 | Complete |
 | ASSET-04 | Phase 2 | Complete |
-| SEO-01 | Phase 3 | Pending |
-| SEO-02 | Phase 3 | Pending |
-| SEO-03 | Phase 3 | Pending |
-| SEO-04 | Phase 3 | Pending |
-| SEO-05 | Phase 3 | Pending |
-| SEO-06 | Phase 3 | Pending |
-| SEO-07 | Phase 3 | Pending |
-| SEO-08 | Phase 3 | Pending |
-| SEO-09 | Phase 3 | Pending |
+| SEO-01 | Phase 3 | Complete |
+| SEO-02 | Phase 3 | Complete |
+| SEO-03 | Phase 3 | Complete |
+| SEO-04 | Phase 3 | Complete |
+| SEO-05 | Phase 3 | Complete |
+| SEO-06 | Phase 3 | Complete |
+| SEO-07 | Phase 3 | Complete |
+| SEO-08 | Phase 3 | Complete |
+| SEO-09 | Phase 3 | Complete |
 | ASSET-01 | Phase 3 | Pending |
 | ASSET-02 | Phase 3 | Pending |
 | DEPL-01 | Phase 4 | Pending |
