@@ -2,18 +2,18 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 4
-current_phase_name: Deployment, Domain & Verification
+current_phase: 04
+current_phase_name: deployment-domain-verification
 status: executing
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-07-25T08:16:26.961Z"
+stopped_at: Completed 04-01-PLAN.md
+last_updated: "2026-07-25T08:50:34.070Z"
 last_activity: 2026-07-25
-last_activity_desc: Phase 3 complete, transitioned to Phase 4
+last_activity_desc: Phase 04 execution started
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 3
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 11
+  completed_plans: 9
 ---
 
 # Project State
@@ -23,16 +23,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-07-24)
 
 **Core value:** A visitor who lands here from a search or a shared link immediately understands what Overlay Notes does and clicks through to install it — and the page is discoverable enough that those visitors arrive in the first place.
-**Current focus:** Phase 4 — Deployment, Domain & Verification
+**Current focus:** Phase 04 — deployment-domain-verification
 
 ## Current Position
 
-Phase: 4 — Deployment, Domain & Verification
-Plan: Not started
+Phase: 04 (deployment-domain-verification) — EXECUTING
+Plan: 2 of 3
 Status: Ready to execute
-Last activity: 2026-07-25 — Phase 3 complete, transitioned to Phase 4
+Last activity: 2026-07-25 — Phase 04 execution started
 
-Progress: [██████████] 100%
+Progress: [████████░░] 82%
 
 ## Performance Metrics
 
@@ -67,6 +67,7 @@ Progress: [██████████] 100%
 | Phase 03 P01 | 15min | 3 tasks | 4 files |
 | Phase 03 P02 | 12min | 3 tasks | 5 files |
 | Phase 03 P03 | 5min | 2 tasks | 1 files |
+| Phase 04 P01 | 15min | 3 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -94,6 +95,9 @@ Recent decisions affecting current work:
 - [Phase ?]: Kept UI-SPEC's default OG crop rect (x:400,y:170,w:780,h:630) unchanged — annotation cluster confirmed legible on visual QA, no tuning needed
 - [Phase ?]: Crop-to-box scaling expressed as a runtime cover-scale formula from named CROP_*/PHOTO_BOX_* consts rather than hardcoded pixel values, for easy future re-tuning
 - [Phase ?]: Parsed PNG IHDR bytes directly in tests/seo.spec.ts (node:fs, no new dependency) to cross-check public/og-image.png's actual on-disk dimensions against the declared og:image:width/height meta tags
+- [Phase ?]: [Phase 4-01]: Fixed Vercel project Framework Preset (null -> nextjs via Projects API) after vercel project add left it undetected, which was serving public/ as a static site instead of the Next.js build (404s on /, /robots.txt, /sitemap.xml)
+- [Phase ?]: [Phase 4-01]: Left Vercel Deployment Protection (ssoProtection: all_except_custom_domains, pre-existing team default) untouched per plan scope — it blocks unauthenticated curl on preview/non-aliased URLs but not the production alias or (per DEPL-03 design) the eventual custom domain
+- [Phase ?]: [Phase 4-01]: Upgraded local vercel CLI 51.8.0 -> 57.0.0; must invoke via full path /Users/kalebnim/.local/bin/vercel since ~/.bun/bin/vercel shadows it in PATH
 
 ### Pending Todos
 
@@ -105,6 +109,7 @@ None yet.
 - ⚠️ [Phase 3 → Phase 4] **SEO-08 production header check**: `next.config.ts` emits `X-Robots-Tag: noindex` only when `VERCEL_ENV !== 'production'`. This relies on Vercel's "Automatically expose System Environment Variables" being **ON** — if OFF, `VERCEL_ENV` is undefined at build and the noindex header would leak onto production. Phase 4 must `curl -I` the live production URL and confirm there is **no** `X-Robots-Tag: noindex` header (Phase 4 Success Criterion #3: "no leftover noindex header").
 - ⚠️ [Phase 3 → Phase 4] **ASSET-02 (LinkedIn Post Inspector)**: confirm the OG card renders in a real share preview — verifiable only against the deployed URL. Structurally satisfied in Phase 3 (`public/og-image.png` is exactly 1200×630; `og:image` is absolute). Confirm live in Phase 4.
 - [Phase 3, optional / non-blocking] **SEO-05 Google Rich Results Test**: recommended external confirmation of the `SoftwareApplication` JSON-LD (structural correctness already machine-verified in `03-VERIFICATION.md`). Run against the live URL anytime in/after Phase 4.
+- [Phase 4-01 -> 4-02/4-03] Vercel Deployment Protection (ssoProtection: all_except_custom_domains) is ON by team default for kaleb-nims-projects and was not modified — blocks unauthenticated curl on preview/non-aliased deployment URLs. Any future automated preview verification would need a Protection Bypass for Automation secret (itself a Deployment Protection setting) or an authenticated browser session — both out of scope for this phase.
 
 ## Deferred Items
 
@@ -116,6 +121,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-24T04:49:13.453Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-07-25T08:50:34.066Z
+Stopped at: Completed 04-01-PLAN.md
 Resume file: None
