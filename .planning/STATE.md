@@ -5,8 +5,8 @@ milestone_name: milestone
 current_phase: 04
 current_phase_name: deployment-domain-verification
 status: executing
-stopped_at: Completed 04-03-PLAN.md
-last_updated: "2026-07-25T14:29:30.473Z"
+stopped_at: "Completed quick task 260725-vdh: repointed support CTA to buymeacoffee.com/kalebnim"
+last_updated: "2026-07-25T14:41:34.119Z"
 last_activity: 2026-07-25
 last_activity_desc: "Completed quick task 260725-p1o: extend origin story with existing-extension confession"
 progress:
@@ -105,6 +105,7 @@ Recent decisions affecting current work:
 - [Quick 260725-p1o]: originStory extended with a distinct `addendum`/`addendumSource` pair (not merged into `text`/`source`) so the CONT-07-locked original paragraph's design-handoff provenance stays untouched while the two new author-supplied paragraphs (2026-07-25) carry their own honest, non-design-handoff provenance record
 - [Phase ?]: [Phase 4-03]: scripts/verify-analytics-beacon.ts matches Vercel Analytics/Speed Insights script tags by their data-sdkn attribute, not URL pattern -- Vercel proxies both scripts through a per-deployment hashed first-party path for ad-blocker resilience
 - [Phase ?]: [Phase 4-03]: Google Rich Results Test recorded PASSED-WITH-CAVEAT (zero errors, expected non-critical missing-aggregateRating warning -- correct given project claim-discipline forbids fabricating a rating); LinkedIn Post Inspector recorded UNAVAILABLE / NOT VERIFIABLE -- tool renders no usable UI for author or automation, all OG-tag render inputs independently machine-verified
+- [Phase ?]: [Quick 260725-vdh]: Repointed support CTA (SUPPORT_URL/SUPPORT) to buymeacoffee.com/kalebnim (unhyphenated, owned handle) via scoped per-file edits, not blanket find-and-replace, to keep the unrelated github.com/kaleb-nim and kaleb-nim.github.io links byte-identical
 
 ### Pending Todos
 
@@ -124,6 +125,7 @@ None yet.
 |---|-------------|------|--------|-----------|
 | 260725-owi | hero subhead copy update | 2026-07-25 | 3d31b5b | [260725-owi-hero-subhead-copy-update](./quick/260725-owi-hero-subhead-copy-update/) |
 | 260725-p1o | extend origin story with existing-extension confession | 2026-07-25 | 9f77f0a | [260725-p1o-extend-origin-story-with-existing-extens](./quick/260725-p1o-extend-origin-story-with-existing-extens/) |
+| 260725-vdh | update support CTA URL to buymeacoffee.com/kalebnim | 2026-07-25 | 75bc326 | [260725-vdh-update-support-cta-url-to-buymeacoffee-c](./quick/260725-vdh-update-support-cta-url-to-buymeacoffee-c/) |
 
 ## Deferred Items
 
@@ -135,6 +137,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-25T14:29:30.468Z
-Stopped at: Completed 04-03-PLAN.md
+Last session: 2026-07-25T14:41:01.559Z
+Stopped at: Completed quick task 260725-vdh: repointed support CTA to buymeacoffee.com/kalebnim
 Resume file: None
