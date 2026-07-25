@@ -6,9 +6,9 @@ current_phase: 04
 current_phase_name: deployment-domain-verification
 status: executing
 stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-07-25T09:45:40.641Z"
+last_updated: "2026-07-25T10:02:00.000Z"
 last_activity: 2026-07-25
-last_activity_desc: "Completed quick task 260725-owi: hero subhead copy update"
+last_activity_desc: "Completed quick task 260725-p1o: extend origin story with existing-extension confession"
 progress:
   total_phases: 4
   completed_phases: 3
@@ -30,7 +30,7 @@ See: .planning/PROJECT.md (updated 2026-07-24)
 Phase: 04 (deployment-domain-verification) — EXECUTING
 Plan: 1 of 3
 Status: Executing Phase 04
-Last activity: 2026-07-25 — Completed quick task 260725-owi: hero subhead copy update
+Last activity: 2026-07-25 — Completed quick task 260725-p1o: extend origin story with existing-extension confession
 
 Progress: [█████████░] 91%
 
@@ -101,6 +101,7 @@ Recent decisions affecting current work:
 - [Phase ?]: [Phase 4-01]: Upgraded local vercel CLI 51.8.0 -> 57.0.0; must invoke via full path /Users/kalebnim/.local/bin/vercel since ~/.bun/bin/vercel shadows it in PATH
 - [Phase ?]: [Phase 4-02]: Corrected phase premise — kalebnim.dev DNS zone is Squarespace-managed (acquired Google Domains 2023), not Google Cloud DNS; gcloud dns NOT_FOUND was because the zone never existed in GCP, not primarily the broken service-account impersonation
 - [Phase ?]: [Phase 4-02]: overlay-notes.kalebnim.dev live — Vercel-managed Let's Encrypt cert, HTTP->HTTPS redirect, no X-Robots-Tag on production, 9/9 verify-deployment.sh assertions pass; closes DEPL-03 and Phase 3's deferred SEO-08 production observation
+- [Quick 260725-p1o]: originStory extended with a distinct `addendum`/`addendumSource` pair (not merged into `text`/`source`) so the CONT-07-locked original paragraph's design-handoff provenance stays untouched while the two new author-supplied paragraphs (2026-07-25) carry their own honest, non-design-handoff provenance record
 
 ### Pending Todos
 
@@ -119,6 +120,7 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260725-owi | hero subhead copy update | 2026-07-25 | 3d31b5b | [260725-owi-hero-subhead-copy-update](./quick/260725-owi-hero-subhead-copy-update/) |
+| 260725-p1o | extend origin story with existing-extension confession | 2026-07-25 | 9f77f0a | [260725-p1o-extend-origin-story-with-existing-extens](./quick/260725-p1o-extend-origin-story-with-existing-extens/) |
 
 ## Deferred Items
 
@@ -130,6 +132,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-25T09:30:00.524Z
-Stopped at: Completed 04-02-PLAN.md
+Last session: 2026-07-25T10:02:00.000Z
+Stopped at: Completed quick task 260725-p1o
 Resume file: None
