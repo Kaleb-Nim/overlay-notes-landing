@@ -249,7 +249,7 @@ claims — per CONTEXT.md, re-run `bun scripts/verify-claims.ts` after wiring.
 | Nav GitHub button | "GitHub" | `concept-1a.html` |
 | Hero badge/pill | "✦ Free · Chrome · 100% local" | `concept-1a.html` `.pill` |
 | Hero H1 | "Draw & annotate notes on **any webpage**" (second phrase in `--purple`) | `concept-1a.html` `.hero h1` |
-| Hero subhead | "A transparent, Excalidraw-style sketch canvas on top of any website. Handwrite over what you're reading — notes pin to the content, scroll with the page, and save locally per URL." | `concept-1a.html` `.hero p` — verified copy, unchanged |
+| Hero subhead | "Sketch diagrams that have a hand-drawn feel to them on any website in real time. Add text, lines, arrows, and shapes as you write your study notes. Saved automatically every time you revisit the site." | author override 2026-07-25, quick task `260725-owi` — supersedes the `concept-1a.html` `.hero p` copy |
 | Primary CTA | "+ Add to Chrome" → `https://chromewebstore.google.com/detail/overlay-notes/ogekdbffoapphpabjphfgeppildcleck` | `01-UI-SPEC.md` (locked), PAGE-11 |
 | Secondary CTA | "View on GitHub" → `https://github.com/kaleb-nim/overlay-notes` | `01-UI-SPEC.md` (locked), PAGE-11 |
 | Hero screenshot alt | "Handwritten notes, arrows and underlines drawn over a CS2030 lecture-notes webpage" | `concept-1a.html`, ASSET-03 (already descriptive, not "screenshot") |
