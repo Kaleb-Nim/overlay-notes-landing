@@ -9,7 +9,8 @@
     "test": "playwright test",
     "verify:claims": "bun scripts/verify-claims.ts",
     "generate:og": "bun scripts/generate-og-image.ts",
-    "verify:deploy": "bash scripts/verify-deployment.sh"
+    "verify:deploy": "bash scripts/verify-deployment.sh",
+    "verify:beacon": "bun scripts/verify-analytics-beacon.ts"
   },
   "dependencies": {
     "@vercel/analytics": "2.0.1",
