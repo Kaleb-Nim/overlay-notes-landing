@@ -41,3 +41,5 @@ bun run verify:deploy <url>          # re-run the deployed-surface verifier agai
 
 See [`TESTING.md`](./TESTING.md) for the full Playwright E2E coverage map and how it
 plugs into the project's verification workflow.
+
+Deployed on Vercel — pushes to `main` and pull requests both trigger automatic builds.
