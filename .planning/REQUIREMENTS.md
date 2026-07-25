@@ -75,7 +75,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **DEPL-01**: The repo exists on GitHub under the author's account
 - [x] **DEPL-02**: The site builds and deploys on Vercel, with preview deployments on pull requests
 - [x] **DEPL-03**: The site serves on `https://overlay-notes.kalebnim.dev` over HTTPS
-- [ ] **DEPL-04**: Vercel Web Analytics and Speed Insights report data from production
+- [x] **DEPL-04**: Vercel Web Analytics and Speed Insights report data from production
 
 ## v2 Requirements
 
@@ -170,7 +170,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEPL-01 | Phase 4 | Complete |
 | DEPL-02 | Phase 4 | Complete |
 | DEPL-03 | Phase 4 | Complete |
-| DEPL-04 | Phase 4 | Pending |
+| DEPL-04 | Phase 4 | Complete |
 
 **Coverage:**
 

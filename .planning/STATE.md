@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 04
 current_phase_name: deployment-domain-verification
 status: executing
-stopped_at: Completed 04-02-PLAN.md
-last_updated: "2026-07-25T10:02:00.000Z"
+stopped_at: Completed 04-03-PLAN.md
+last_updated: "2026-07-25T14:29:30.473Z"
 last_activity: 2026-07-25
 last_activity_desc: "Completed quick task 260725-p1o: extend origin story with existing-extension confession"
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-07-24)
 ## Current Position
 
 Phase: 04 (deployment-domain-verification) — EXECUTING
-Plan: 1 of 3
-Status: Executing Phase 04
+Plan: 3 of 3
+Status: Ready to execute
 Last activity: 2026-07-25 — Completed quick task 260725-p1o: extend origin story with existing-extension confession
 
-Progress: [█████████░] 91%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -69,6 +69,7 @@ Progress: [█████████░] 91%
 | Phase 03 P03 | 5min | 2 tasks | 1 files |
 | Phase 04 P01 | 15min | 3 tasks | 4 files |
 | Phase 04 P02 | 8min | 1 tasks | 0 files |
+| Phase 04 P03 | 25min | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -102,6 +103,8 @@ Recent decisions affecting current work:
 - [Phase ?]: [Phase 4-02]: Corrected phase premise — kalebnim.dev DNS zone is Squarespace-managed (acquired Google Domains 2023), not Google Cloud DNS; gcloud dns NOT_FOUND was because the zone never existed in GCP, not primarily the broken service-account impersonation
 - [Phase ?]: [Phase 4-02]: overlay-notes.kalebnim.dev live — Vercel-managed Let's Encrypt cert, HTTP->HTTPS redirect, no X-Robots-Tag on production, 9/9 verify-deployment.sh assertions pass; closes DEPL-03 and Phase 3's deferred SEO-08 production observation
 - [Quick 260725-p1o]: originStory extended with a distinct `addendum`/`addendumSource` pair (not merged into `text`/`source`) so the CONT-07-locked original paragraph's design-handoff provenance stays untouched while the two new author-supplied paragraphs (2026-07-25) carry their own honest, non-design-handoff provenance record
+- [Phase ?]: [Phase 4-03]: scripts/verify-analytics-beacon.ts matches Vercel Analytics/Speed Insights script tags by their data-sdkn attribute, not URL pattern -- Vercel proxies both scripts through a per-deployment hashed first-party path for ad-blocker resilience
+- [Phase ?]: [Phase 4-03]: Google Rich Results Test recorded PASSED-WITH-CAVEAT (zero errors, expected non-critical missing-aggregateRating warning -- correct given project claim-discipline forbids fabricating a rating); LinkedIn Post Inspector recorded UNAVAILABLE / NOT VERIFIABLE -- tool renders no usable UI for author or automation, all OG-tag render inputs independently machine-verified
 
 ### Pending Todos
 
@@ -111,8 +114,8 @@ None yet.
 
 - ✅ RESOLVED (04-02): `overlay-notes.kalebnim.dev` is live — human added the CNAME via **Squarespace DNS Settings → Custom records** (correction: the zone is Squarespace-managed, not Google Cloud DNS as earlier phase artifacts stated — Squarespace acquired Google Domains in 2023 and the `ns-cloud-b{1..4}.googledomains.com` nameservers are legacy Google Domains infra now surfaced there). TLS is live (Let's Encrypt, valid through Oct 23 2026), HTTP redirects to HTTPS.
 - ✅ RESOLVED (04-02): **SEO-08 production header check** confirmed live — `curl -sSD - https://overlay-notes.kalebnim.dev/` shows no `X-Robots-Tag` header at all; `VERCEL_ENV` resolved correctly at build time.
-- ⚠️ [Phase 3 → Phase 4] **ASSET-02 (LinkedIn Post Inspector)**: confirm the OG card renders in a real share preview — verifiable only against the deployed URL. Structurally satisfied in Phase 3 (`public/og-image.png` is exactly 1200×630; `og:image` is absolute). Confirm live in Phase 4.
-- [Phase 3, optional / non-blocking] **SEO-05 Google Rich Results Test**: recommended external confirmation of the `SoftwareApplication` JSON-LD (structural correctness already machine-verified in `03-VERIFICATION.md`). Run against the live URL anytime in/after Phase 4.
+- ✅ RESOLVED (04-03): **SEO-05 Google Rich Results Test** run against the live URL — 1 valid `SoftwareApplication` item, zero errors. PASSED-WITH-CAVEAT: a non-critical missing-`aggregateRating` warning is present and is the *correct* state (must_haves require no `aggregateRating`/`review`; fabricating one to silence the warning would violate claim discipline).
+- ⚠️ STILL OPEN (04-03): **ASSET-02 (LinkedIn Post Inspector)** — the tool itself no longer renders a usable UI, for the author's own authenticated session or for automation, so the live-render observation could not be made by anyone. Recorded as UNAVAILABLE / NOT VERIFIABLE, not passed and not failed. Every input to the card render is independently machine-verified live (`og-image.png` exactly 1200×630 by IHDR decode; `og:image`/`twitter:image`/`og:title`/`og:description` all absolute and correct). The only remaining way to observe the actual render is to share the URL in a real LinkedIn post — an author-driven action outside any plan's scope.
 - [Phase 4-01 -> 4-02/4-03] Vercel Deployment Protection (ssoProtection: all_except_custom_domains) is ON by team default for kaleb-nims-projects and was not modified — blocks unauthenticated curl on preview/non-aliased deployment URLs. Any future automated preview verification would need a Protection Bypass for Automation secret (itself a Deployment Protection setting) or an authenticated browser session — both out of scope for this phase.
 
 ### Quick Tasks Completed
@@ -132,6 +135,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-25T10:02:00.000Z
-Stopped at: Completed quick task 260725-p1o
+Last session: 2026-07-25T14:29:30.468Z
+Stopped at: Completed 04-03-PLAN.md
 Resume file: None

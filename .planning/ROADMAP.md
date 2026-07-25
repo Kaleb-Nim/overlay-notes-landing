@@ -107,7 +107,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. After a human adds the CNAME for `overlay-notes.kalebnim.dev` at Google Cloud DNS (the zone's actual nameserver, not Vercel's — a manual checkpoint, not an automatable task), the site serves over HTTPS with no leftover `noindex` header.
   4. Vercel Web Analytics and Speed Insights both report real data from the production deployment.
 
-**Plans**: 2/3 plans executed
+**Plans**: 3/3 plans executed
 
 **Wave 1**
 
@@ -119,7 +119,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 **Wave 3** *(blocked on Wave 2 — needs the live custom domain)*
 
-- [ ] 04-03-PLAN.md — Human checkpoint to enable Web Analytics + Speed Insights, redeploy, machine-verify both beacon routes, and close Phase 3's deferred ASSET-02 (LinkedIn) and SEO-05 (Rich Results) items on the live domain (DEPL-04)
+- [x] 04-03-PLAN.md — Human checkpoint to enable Web Analytics + Speed Insights, redeploy, machine-verify both beacon routes, and close Phase 3's deferred ASSET-02 (LinkedIn) and SEO-05 (Rich Results) items on the live domain (DEPL-04)
 
 ## Progress
 
@@ -131,4 +131,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation & Verified Copy | 2/2 | Complete    | 2026-07-24 |
 | 2. Page Sections & Responsive UI | 3/3 | Complete    | 2026-07-24 |
 | 3. SEO Metadata, Structured Data & Social Card | 3/3 | Complete    | 2026-07-25 |
-| 4. Deployment, Domain & Verification | 2/3 | In Progress|  |
+| 4. Deployment, Domain & Verification | 3/3 | In Progress|  |
