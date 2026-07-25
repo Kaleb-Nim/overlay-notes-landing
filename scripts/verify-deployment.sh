@@ -106,7 +106,7 @@ fi
 # --- /og-image.png returns 200 as image/png -----------------------------------
 OG_HEADERS=$(curl -sSD - -o /dev/null "$BASE_URL/og-image.png" 2>/dev/null || echo "")
 OG_STATUS=$(echo "$OG_HEADERS" | head -1 | grep -oE '[0-9]{3}' | head -1 || echo "000")
-OG_CONTENT_TYPE=$(echo "$OG_HEADERS" | grep -i '^content-type:' | head -1 | tr -d '\r' | sed 's/^[Cc]ontent-[Tt]ype: *//')
+OG_CONTENT_TYPE=$(echo "$OG_HEADERS" | { grep -i '^content-type:' || true; } | head -1 | tr -d '\r' | sed 's/^[Cc]ontent-[Tt]ype: *//')
 if [ "$OG_STATUS" = "200" ]; then
   pass "/og-image.png returns 200 (observed: $OG_STATUS)"
 else
@@ -133,7 +133,7 @@ fi
 
 # --- X-Robots-Tag posture ------------------------------------------------------
 ROOT_HEADERS=$(curl -sSD - -o /dev/null "$BASE_URL/" 2>/dev/null || echo "")
-ROBOTS_HEADER=$(echo "$ROOT_HEADERS" | grep -i '^x-robots-tag:' | head -1 | tr -d '\r' | sed 's/^[Xx]-[Rr]obots-[Tt]ag: *//')
+ROBOTS_HEADER=$(echo "$ROOT_HEADERS" | { grep -i '^x-robots-tag:' || true; } | head -1 | tr -d '\r' | sed 's/^[Xx]-[Rr]obots-[Tt]ag: *//')
 if [ "$EXPECT_NOINDEX" = "1" ]; then
   if [ -n "$ROBOTS_HEADER" ] && echo "$ROBOTS_HEADER" | grep -qi 'noindex'; then
     pass "X-Robots-Tag present and contains noindex (observed: $ROBOTS_HEADER)"
