@@ -5,15 +5,15 @@ milestone_name: milestone
 current_phase: 04
 current_phase_name: deployment-domain-verification
 status: executing
-stopped_at: Completed 04-01-PLAN.md
-last_updated: "2026-07-25T08:50:34.070Z"
+stopped_at: Completed 04-02-PLAN.md
+last_updated: "2026-07-25T09:30:00.528Z"
 last_activity: 2026-07-25
 last_activity_desc: Phase 04 execution started
 progress:
   total_phases: 4
   completed_phases: 3
   total_plans: 11
-  completed_plans: 9
+  completed_plans: 10
 ---
 
 # Project State
@@ -28,11 +28,11 @@ See: .planning/PROJECT.md (updated 2026-07-24)
 ## Current Position
 
 Phase: 04 (deployment-domain-verification) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-07-25 — Phase 04 execution started
 
-Progress: [████████░░] 82%
+Progress: [█████████░] 91%
 
 ## Performance Metrics
 
@@ -68,6 +68,7 @@ Progress: [████████░░] 82%
 | Phase 03 P02 | 12min | 3 tasks | 5 files |
 | Phase 03 P03 | 5min | 2 tasks | 1 files |
 | Phase 04 P01 | 15min | 3 tasks | 4 files |
+| Phase 04 P02 | 8min | 1 tasks | 0 files |
 
 ## Accumulated Context
 
@@ -98,6 +99,8 @@ Recent decisions affecting current work:
 - [Phase ?]: [Phase 4-01]: Fixed Vercel project Framework Preset (null -> nextjs via Projects API) after vercel project add left it undetected, which was serving public/ as a static site instead of the Next.js build (404s on /, /robots.txt, /sitemap.xml)
 - [Phase ?]: [Phase 4-01]: Left Vercel Deployment Protection (ssoProtection: all_except_custom_domains, pre-existing team default) untouched per plan scope — it blocks unauthenticated curl on preview/non-aliased URLs but not the production alias or (per DEPL-03 design) the eventual custom domain
 - [Phase ?]: [Phase 4-01]: Upgraded local vercel CLI 51.8.0 -> 57.0.0; must invoke via full path /Users/kalebnim/.local/bin/vercel since ~/.bun/bin/vercel shadows it in PATH
+- [Phase ?]: [Phase 4-02]: Corrected phase premise — kalebnim.dev DNS zone is Squarespace-managed (acquired Google Domains 2023), not Google Cloud DNS; gcloud dns NOT_FOUND was because the zone never existed in GCP, not primarily the broken service-account impersonation
+- [Phase ?]: [Phase 4-02]: overlay-notes.kalebnim.dev live — Vercel-managed Let's Encrypt cert, HTTP->HTTPS redirect, no X-Robots-Tag on production, 9/9 verify-deployment.sh assertions pass; closes DEPL-03 and Phase 3's deferred SEO-08 production observation
 
 ### Pending Todos
 
@@ -105,8 +108,8 @@ None yet.
 
 ### Blockers/Concerns
 
-- `overlay-notes.kalebnim.dev` does not resolve yet — Phase 4 requires a human to add a CNAME at Google Cloud DNS (not Vercel's nameservers) before the site is reachable on the custom domain.
-- ⚠️ [Phase 3 → Phase 4] **SEO-08 production header check**: `next.config.ts` emits `X-Robots-Tag: noindex` only when `VERCEL_ENV !== 'production'`. This relies on Vercel's "Automatically expose System Environment Variables" being **ON** — if OFF, `VERCEL_ENV` is undefined at build and the noindex header would leak onto production. Phase 4 must `curl -I` the live production URL and confirm there is **no** `X-Robots-Tag: noindex` header (Phase 4 Success Criterion #3: "no leftover noindex header").
+- ✅ RESOLVED (04-02): `overlay-notes.kalebnim.dev` is live — human added the CNAME via **Squarespace DNS Settings → Custom records** (correction: the zone is Squarespace-managed, not Google Cloud DNS as earlier phase artifacts stated — Squarespace acquired Google Domains in 2023 and the `ns-cloud-b{1..4}.googledomains.com` nameservers are legacy Google Domains infra now surfaced there). TLS is live (Let's Encrypt, valid through Oct 23 2026), HTTP redirects to HTTPS.
+- ✅ RESOLVED (04-02): **SEO-08 production header check** confirmed live — `curl -sSD - https://overlay-notes.kalebnim.dev/` shows no `X-Robots-Tag` header at all; `VERCEL_ENV` resolved correctly at build time.
 - ⚠️ [Phase 3 → Phase 4] **ASSET-02 (LinkedIn Post Inspector)**: confirm the OG card renders in a real share preview — verifiable only against the deployed URL. Structurally satisfied in Phase 3 (`public/og-image.png` is exactly 1200×630; `og:image` is absolute). Confirm live in Phase 4.
 - [Phase 3, optional / non-blocking] **SEO-05 Google Rich Results Test**: recommended external confirmation of the `SoftwareApplication` JSON-LD (structural correctness already machine-verified in `03-VERIFICATION.md`). Run against the live URL anytime in/after Phase 4.
 - [Phase 4-01 -> 4-02/4-03] Vercel Deployment Protection (ssoProtection: all_except_custom_domains) is ON by team default for kaleb-nims-projects and was not modified — blocks unauthenticated curl on preview/non-aliased deployment URLs. Any future automated preview verification would need a Protection Bypass for Automation secret (itself a Deployment Protection setting) or an authenticated browser session — both out of scope for this phase.
@@ -121,6 +124,6 @@ Items acknowledged and carried forward from previous milestone close:
 
 ## Session Continuity
 
-Last session: 2026-07-25T08:50:34.066Z
-Stopped at: Completed 04-01-PLAN.md
+Last session: 2026-07-25T09:30:00.524Z
+Stopped at: Completed 04-02-PLAN.md
 Resume file: None
