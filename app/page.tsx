@@ -73,9 +73,9 @@ export default function Home() {
                 />
               </svg>
               <p>
-                A transparent, Excalidraw-style sketch canvas on top of any website. Handwrite
-                over what you&apos;re reading — notes pin to the content, scroll with the page,
-                and save locally per URL.
+                Sketch diagrams that have a hand-drawn feel to them on any website in real
+                time. Add text, lines, arrows, and shapes as you write your study notes. Saved
+                automatically every time you revisit the site.
               </p>
               <div className="cta-row">
                 <a className="btn-primary" href={WEBSTORE_URL}>
