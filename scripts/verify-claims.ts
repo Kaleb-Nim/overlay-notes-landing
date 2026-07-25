@@ -60,6 +60,7 @@ const textEntries: TextEntry[] = [
     { label: `faqs[${i}].answer`, text: faq.answer },
   ]),
   { label: 'originStory.text', text: originStory.text },
+  ...originStory.addendum.map((text, i) => ({ label: `originStory.addendum[${i}]`, text })),
 ];
 
 function escapeRegExp(value: string): string {

@@ -67,4 +67,13 @@ export const originStory = {
    * rather than deriving it from this plain string. */
   source:
     'design-handoff/concept-1a.html .origin p line 216 (verbatim, this IS the design handoff\'s source of truth per CONTEXT.md); corroborated by README.md "Why I built this" — "This started while I was studying for NUS CS2030."',
+  /** Rendered by app/page.tsx via a map over this array (one <p> per entry) — unlike
+   * `text` above, whose <b> wrap is reproduced directly in JSX. app/page.tsx is
+   * downstream of this array, not a second copy of it. */
+  addendum: [
+    'You would think someone has made a Chrome extension to do exactly this. I spent 1h searching for available extensions to annotate notes and they were all ass cheeks',
+    'So naturally… instead of studying CS2030, my ADHD brain decided to vibe coding this Chrome extension. To study CS2030 more efficiently. Yes.',
+  ],
+  addendumSource:
+    'Supplied directly by the author (Kaleb Nim) for quick task 260725-p1o on 2026-07-25; first-person narrative continuation of the origin story. NOT drawn from design-handoff/concept-1a.html, STORE-LISTING.md, or README.md. Informal register is intentional author voice and must not be rewritten. Asserts no product, feature, or privacy claim.',
 } as const;
