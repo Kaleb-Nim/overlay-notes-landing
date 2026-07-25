@@ -197,3 +197,8 @@ None — no external service configuration required beyond what this task alread
 ---
 *Phase: 04-deployment-domain-verification*
 *Completed: 2026-07-25*
+
+## Self-Check: PASSED
+
+All created files (README.md, scripts/verify-deployment.sh, this SUMMARY.md) and all
+referenced commit hashes (793f0b6, bedd3bc, fb7d43b) confirmed present via `git log --oneline --all`.
