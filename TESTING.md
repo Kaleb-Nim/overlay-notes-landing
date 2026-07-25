@@ -46,7 +46,7 @@ Keyed on the locked contract, so it survives markup changes:
 |---|---|
 | Primary CTA → Chrome Web Store `…/ogekdbffoapphpabjphfgeppildcleck` | SC#3 |
 | Secondary CTA → `github.com/kaleb-nim/overlay-notes` | SC#3 |
-| Support CTA → `buymeacoffee.com/kaleb-nim` | SC#3 |
+| Support CTA → `buymeacoffee.com/kalebnim` | SC#3 |
 | Footer links the GitHub Pages privacy policy | SC#1 |
 | No `href="#"` / empty dead links (tip chips) | SC#3 |
 | Every in-page nav anchor resolves to a real element | SC#2 |

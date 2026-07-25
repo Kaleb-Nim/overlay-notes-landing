@@ -93,7 +93,7 @@ CNAME added **at Google Cloud DNS**, not via Vercel nameservers.
 
 **Support section, added to the handoff 2026-07-24.** A "Keep the marker uncapped" card sits
 as the last content block before the footer: white card with a purple "☕ support" tab, the
-solo-developer pitch, a "Buy me a coffee" CTA → `https://buymeacoffee.com/kaleb-nim`, and
+solo-developer pitch, a "Buy me a coffee" CTA → `https://buymeacoffee.com/kalebnim`, and
 $3/$8/$20 tip chips. The design handoff's `README.md` was NOT updated to document it — the
 prototype HTML is the only spec. Two caveats carried into requirements: its grid is inline-styled
 and escapes the prototype's `@media(max-width:760px)` block, and its tip chips are `<span>`

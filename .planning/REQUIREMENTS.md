@@ -40,7 +40,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **PAGE-10**: Every in-page nav link scrolls to a section that exists on the page
 - [x] **PAGE-11**: Primary CTA links to the live Chrome Web Store listing; secondary CTA links to the GitHub repo
 - [x] **PAGE-12**: Visitor sees a support section ("Keep the marker uncapped") as the last content block before the footer — white card with the purple "☕ support" tab, the solo-developer pitch, a "Buy me a coffee" CTA, and the $3/$8/$20 tip chips
-- [x] **PAGE-13**: The support CTA links to `https://buymeacoffee.com/kaleb-nim`, and the tip-amount chips are either real links or visually non-interactive — never dead elements that look clickable
+- [x] **PAGE-13**: The support CTA links to `https://buymeacoffee.com/kalebnim`, and the tip-amount chips are either real links or visually non-interactive — never dead elements that look clickable
 
 ### SEO
 
