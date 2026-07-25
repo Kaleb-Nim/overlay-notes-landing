@@ -22,7 +22,7 @@ import { faqs, originStory } from '@/lib/content';
 const WEBSTORE_URL =
   'https://chromewebstore.google.com/detail/overlay-notes/ogekdbffoapphpabjphfgeppildcleck';
 const REPO_URL = 'https://github.com/kaleb-nim/overlay-notes';
-const SUPPORT_URL = 'https://buymeacoffee.com/kaleb-nim';
+const SUPPORT_URL = 'https://buymeacoffee.com/kalebnim';
 const PRIVACY_URL = 'https://kaleb-nim.github.io/overlay-notes/';
 const EXCALIDRAW_URL = 'https://excalidraw.com';
 

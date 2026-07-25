@@ -14,7 +14,7 @@ import { test, expect } from '@playwright/test';
 const WEBSTORE =
   'https://chromewebstore.google.com/detail/overlay-notes/ogekdbffoapphpabjphfgeppildcleck';
 const REPO = 'https://github.com/kaleb-nim/overlay-notes';
-const SUPPORT = 'https://buymeacoffee.com/kaleb-nim';
+const SUPPORT = 'https://buymeacoffee.com/kalebnim';
 const PRIVACY = 'https://kaleb-nim.github.io/overlay-notes/'; // the ONE allowed github.io link (footer)
 
 test.beforeEach(async ({ page }) => {
