@@ -138,6 +138,12 @@ test.describe('Section presence', () => {
     await expect(page.locator('#faq .h')).toHaveCount(6);
   });
 
+  test('the origin story renders all three paragraphs, ending on the CS2030 punchline', async ({ page }) => {
+    const paragraphs = page.locator('#origin-story p');
+    await expect(paragraphs).toHaveCount(3);
+    await expect(paragraphs.last()).toContainText('To study CS2030 more efficiently. Yes.');
+  });
+
   test('the "Who it\'s for" section renders all four audience chips', async ({ page }) => {
     await expect(page.locator('#who .chip')).toHaveCount(4);
   });
