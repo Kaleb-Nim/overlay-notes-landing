@@ -8,7 +8,8 @@
     "start": "next start",
     "test": "playwright test",
     "verify:claims": "bun scripts/verify-claims.ts",
-    "generate:og": "bun scripts/generate-og-image.ts"
+    "generate:og": "bun scripts/generate-og-image.ts",
+    "verify:deploy": "bash scripts/verify-deployment.sh"
   },
   "dependencies": {
     "@vercel/analytics": "2.0.1",
