@@ -17,7 +17,7 @@
 // next/image.
 
 import Image from 'next/image';
-import { faqs } from '@/lib/content';
+import { faqs, originStory } from '@/lib/content';
 
 const WEBSTORE_URL =
   'https://chromewebstore.google.com/detail/overlay-notes/ogekdbffoapphpabjphfgeppildcleck';
@@ -205,6 +205,9 @@ export default function Home() {
               question marks, &quot;wait, why?&quot; — so I made a marker that lives on top of
               the web.
             </p>
+            {originStory.addendum.map((paragraph, i) => (
+              <p key={i}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </section>

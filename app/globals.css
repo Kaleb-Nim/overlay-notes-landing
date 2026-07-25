@@ -94,6 +94,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0
 .origin{margin:26px 0 34px;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:22px 24px;position:relative}
 .origin .tag{position:absolute;top:-13px;left:22px;background:var(--yellow);font:600 12px var(--font-public), sans-serif;color:var(--ink);padding:3px 10px;border-radius:12px;transform:rotate(-2deg)}
 .origin p{margin:0;font:500 17px/1.55 var(--font-shantell), cursive;color:var(--ink)}
+.origin p + p{margin-top:14px}
 
 /* footer */
 footer{background:var(--dark)}
